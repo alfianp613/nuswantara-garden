@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrah2 cSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- My CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='stylesheets/style2.css') }}"
+        />
+        <title>Tentang Kami</title>
+        <link
+            rel="icon"
+            href="/static/images/Logo no tulisan.png"
+            type="image/x-icon"
+        />
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" id="logo-navbar">
+                    <img
+                        src="/static/images/Elevate Logo tulisan putih.png"
+                        width="150px"
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tentangkami/"
+                                >About me</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/">Impact Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacs/">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--End Navbar-->
+        <!--Heading-->
+        <section id="heading" style="margin-top: 5rem">
+            <h1 id="judul">Tentang Kami</h1>
+            <div class="container" style="margin-top: 2rem">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <img
+                            src="/static/images/ilham.jpg"
+                            class="rounded-circle mx-auto d-block"
+                            alt="Foto Ilham"
+                            width="250px"
+                        />
+                        <h2 class="nama">Ilham Ahmad Kamil</h2>
+                        <h2 class="nim">162012133019</h2>
+                    </div>
+
+                    <div class="col-md-3">
+                        <img
+                            src="/static/images/Profile.jpg"
+                            class="rounded-circle mx-auto d-block"
+                            alt="Foto Alfian"
+                            width="250px"
+                        />
+                        <h2 class="nama">Muhammad Alfian Pratama</h2>
+                        <h2 class="nim">162012133037</h2>
+                    </div>
+                    <div class="col-md-3">
+                        <img
+                            src="/static/images/farras.jpeg"
+                            class="rounded-circle mx-auto d-block"
+                            alt="Foto Farras"
+                            width="250px"
+                        />
+                        <h2 class="nama">Duaja Kukuh Adiwijaya</h2>
+                        <h2 class="nim">162012133058</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Heading-->
+        <!--Isi-->
+        <section id="isi">
+            <div class="container">
+                <div class="row" id="isi">
+                    <p>
+                        Indonesia merupakan salah satu penyuplai minyak atsiri
+                        terbesar di dunia. Perkembangan dunia atsiri saat ini
+                        mendapatkan dampak yang cukup signifikan dari adanya
+                        covid-19 banyak para petani yang kehilangan harga jual
+                        atsiri sehingga tidak melakukan produksi lagi yang
+                        berakibatkan alat dan beberapa petani mengalami
+                        kekurangan anggaran dana untuk memulai kembali.
+                        Sedangkan, hasil minyak atsiri Indonesia merupakan salah
+                        satu didunia yang terbaik.
+                    </p>
+                    <p>
+                        Nuswantara garden merupakan salah satu inovasi sosial
+                        yang ditujukan untuk membantu para petani yang
+                        kekurangan dana untuk meningkatkan produktifitas
+                        pertanian mereka dengan dilakukan penggalangan dana dari
+                        masyarakat yang ingin membantu petani tersebut.
+                    </p>
+                    <p>
+                        Kami merupakan mahasiswa Universitas Airlangga program
+                        studi S1 Teknologi Sains Data semester 5 yaitu Ilham
+                        Ahmad Kamil, Muhammad Alfian Pratama, dan Duaja Kukuh
+                        Adiwijaya. Kami berharap dengan WebApps yang sudah kita
+                        buat harapannya dapat memberikan manfaat bagi para
+                        petani yang kekurangan dana untuk mewujudkan project
+                        pertanian mereka dengan dana sedekah dari masyarakat.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--End Isi-->
+        <!--Footer-->
+        <footer style="margin-top: 2rem">
+            <div class="container">
+                <div class="row row-cols-auto">
+                    <div class="col">
+                        <img
+                            src="/static/images/Logo Slogan.png"
+                            alt="Logo Elevate"
+                            id="logo-bawah"
+                        />
+                    </div>
+                    <div class="col">
+                        <div class="garis"></div>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled footer-nav">
+                            <li><a href="/tentangkami/">About me</a></li>
+                            <li><a href="/blog/">Impact Project</a></li>
+                            <li><a href="/dashboard/">News</a></li>
+                            <li><a href="/tentangkami/">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="garis"></div>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled attrib">
+                            <li>
+                                <p>
+                                    Icons made by
+                                    <a
+                                        href="https://www.freepik.com"
+                                        title="Freepik"
+                                        >Freepik</a
+                                    >
+                                    from
+                                    <a
+                                        href="https://www.flaticon.com/"
+                                        title="Flaticon"
+                                        >www.flaticon.com</a
+                                    >
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    © 2022 Nuswantara Garden. All rights
+                                    reserved
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End Footer-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
