@@ -15,6 +15,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('index',[
+        "title" => "Nuswantara Garden"
+    ]);
+});
+
+Route::get('/login-user', function () {
+    return view('login-user',[
+        "title" => "User Login"
+    ]);
+});
+
+Route::get('/login-petani', function () {
+    return view('login-petani',[
+        "title" => "Petani Login"
+    ]);
+});
+
+Route::get('/signup-user', function () {
+    return view('signupuser',[
+        "title" => "User Sign Up"
+    ]);
+});
+
+Route::get('/signup-petani', function () {
+    return view('signuppetani',[
+        "title" => "Petani Sign Up"
+    ]);
+});
+
+Route::get('/home', function () {
     return view('home',[
         "title" => "Home"
     ]);
