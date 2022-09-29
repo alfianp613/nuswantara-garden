@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <a
-                        href="/home"
+                        href="/homepetani"
                         class="btn btn-primary"
                         >LOGIN</a>
                         {{-- <button

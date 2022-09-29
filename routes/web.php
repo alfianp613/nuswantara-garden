@@ -50,5 +50,17 @@ Route::get('/home', function () {
     ]);
 });
 
+Route::get('/homepetani', function () {
+    return view('homepetani',[
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/create-project', function () {
+    return view('createproject',[
+        "title" => "Create Project"
+    ]);
+});
+
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
