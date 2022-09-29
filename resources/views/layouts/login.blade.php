@@ -11,7 +11,7 @@
     <title>{{$title}}</title>
   </head>
   <body>
-    @include('partials.navbar')
+    @include('partials.navbarlogin')
       <div class="container mt-4 ">
         @yield('container')
       </div>
