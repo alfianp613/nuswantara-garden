@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrah2 cSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style_blog.css') }}" />
+    <title>Project Petani</title>
+    <link rel="icon" href="/static/images/Logo no tulisan.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/" id="logo-navbar">
+          <img src="/static/images/Elevate Logo tulisan putih.png" width="150px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/tentangkami/">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard/">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Navbar-->
+
+    <!-- Section 1 -->
+    <div class="row section1">
+      <div class="col-6">
+        <img src="/static/images/berita1.png" alt="section1" class="img-fluid">
+      </div>
+      <div class="col-5">
+        <h3> Bantu biaya penyulingan atsiri mawar</h3>
+        <p>Penyulingan </p>
+        <a href="/blog/berita1/" class="btn btn-primary"> Lihat Project</a>
+      </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="row section2">
+      <div class="col-6">
+        <img src="/static/images/berita2.png" alt="section1" class="img-fluid">
+        <h3> Bantu biaya pembuatan irigasi petani </h3>
+        <p>irigasi petanian ...</p>
+        <a href="/blog/berita2/" class="btn btn-primary"> Lihat Project</a>
+      </div>
+      <div class="col-6">
+        <img src="/static/images/berita3.jpg" alt="section1" class="img-fluid">
+        <h3> Bantu Memberikan pendanaan atsiri </h3>
+        <p>bantu pendanaan </p>
+        <a href="/blog/berita3/" class="btn btn-primary"> Lihat Project</a>
+      </div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="row section3">
+      <div class="col-6">
+        <img src="/static/images/berita4.png" alt="section1" class="img-fluid">
+        <h3> Bantu untuk Beli Blower Minyak Atsiri</h3>
+        <p>Bagi banyak orang </p>
+        <a href="/blog/berita4/" class="btn btn-primary"> Lihat Project</a>
+      </div>
+      <div class="col-6">
+        <img src="/static/images/berita5.jpg" alt="section1" class="img-fluid">
+        <h3> Bantu Biaya Pembuatan Green House </h3>
+        <p>Green house merupakan </p>
+        <a href="/blog/berita5/" class="btn btn-primary"> Lihat Project</a>
+      </div>
+      </div>
+    </div>
+
+
+    
+    <!--Footer-->
+    <footer style="margin-top: 2rem">
+      <div class="container">
+        <div class="row row-cols-auto">
+          <div class="col">
+            <img src="/static/images/Logo Slogan.png" alt="Logo Elevate" id="logo-bawah" />
+          </div>
+          <div class="col">
+            <div class="garis"></div>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled footer-nav">
+                <li><a href="/tentangkami/">About me</a></li>
+                <li><a href="/blog/">Impact Project</a></li>
+                <li><a href="/dashboard/">News</a></li>
+                <li><a href="/tentangkami/">Contacts</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="garis"></div>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled attrib">
+              <li>
+                <p>
+                  Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+                  <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </p>
+              </li>
+              <li><p>© 2022 Nuswantara Garden. All rights reserved</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--End Footer-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
+
+
+

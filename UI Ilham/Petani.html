@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrah2 cSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- My CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='stylesheets/style_blog.css') }}"
+        />
+        <title>Impact Project</title>
+        <link
+            rel="icon"
+            href="/static/images/Logo no tulisan.png"
+            type="image/x-icon"
+        />
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" id="logo-navbar">
+                    <img
+                        src="/static/images/Elevate Logo tulisan putih.png"
+                        width="150px"
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tentangkami/"
+                                >About me</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/">Impact Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--End Navbar-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <section class="one">
+                        <h1>PETANI</h1>
+                    </section>
+                </div>
+            </div>
+            <card class="card" style="width: 30rem">
+                <div class="card-body">
+                    <form id="formtable" method="post" action="postform.php">
+                        <div class="mb-3">
+                            <label class="form-label">Nama Project</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="project"
+                                aria-describedby="projectHelp"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Target Dana</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="danatarget"
+                                aria-describedby="danaHelp"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Deskripsi Project</label>
+                            <input
+                                type="text"
+                                id="inputproject"
+                                class="form-control"
+                                aria-describedby="project"
+                            />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Uploud
+                        </button>
+                    </form>
+                </div>
+            </card>
+            <div class="row"></div>
+        </div>
+        <!-- end section one -->
+        <!-- section two -->
+
+        <!-- end section two -->
+
+        <!--Footer-->
+        <footer style="margin-top: 2rem">
+            <div class="container">
+                <div class="row row-cols-auto">
+                    <div class="col">
+                        <img
+                            src="/static/images/Logo Slogan.png"
+                            alt="Logo Elevate"
+                            id="logo-bawah"
+                        />
+                    </div>
+                    <div class="col">
+                        <div class="garis"></div>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled footer-nav">
+                            <li><a href="/tentangkami/">About me</a></li>
+                            <li><a href="/blog/">Impact Project</a></li>
+                            <li><a href="/dashboard/">News</a></li>
+                            <li><a href="/tentangkami/">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="garis"></div>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled attrib">
+                            <li>
+                                <p>
+                                    Icons made by
+                                    <a
+                                        href="https://www.freepik.com"
+                                        title="Freepik"
+                                        >Freepik</a
+                                    >
+                                    from
+                                    <a
+                                        href="https://www.flaticon.com/"
+                                        title="Flaticon"
+                                        >www.flaticon.com</a
+                                    >
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    © 2022 Nuswantara Garden. All rights
+                                    reserved
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End Footer-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
