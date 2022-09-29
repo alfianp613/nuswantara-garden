@@ -5,7 +5,7 @@
     <!-- section one -->
     <div class="col text-center">
         <section class="one">
-            <h1>INI SLIDER</h1>
+            <h1>INI DESC</h1>
         </section>
     </div>
     <!-- end section one -->
@@ -39,6 +39,39 @@
                         </div>
 
                         <div class="mb-3">
+                            <label class="form-label"
+                                >Username</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">NIK</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"
+                                >Komoditas</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Alamat</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                            />
+                        </div>
+
+                        <div class="mb-3">
                             <label
                                 for="inputPassword5"
                                 class="form-label"
@@ -57,10 +90,7 @@
                                 Must be 8-20 characters long.
                             </div>
                         </div>
-                        <a
-                        href="/home"
-                        class="btn btn-primary"
-                        >LOGIN</a>
+
                         {{-- <button
                             type="submit"
                             class="btn btn-primary"
@@ -68,7 +98,7 @@
                             LOGIN
                         </button> --}}
                         <a
-                            href="/signup-petani"
+                            href="/login-petani"
                             class="btn btn-secondary"
                             >SIGN UP</a
                         >

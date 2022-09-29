@@ -5,7 +5,7 @@
   <!-- section one -->
   <div class="col text-center">
       <section class="one">
-          <h1>INI SLIDER</h1>
+          <h1>INI DESC</h1>
       </section>
   </div>
   <!-- end section one -->
@@ -39,6 +39,47 @@
                       </div>
 
                       <div class="mb-3">
+                          <label class="form-label"
+                              >Username</label
+                          >
+                          <input
+                              type="text"
+                              class="form-control"
+                              name="user-name"
+                          />
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label"
+                              >Nama Lengkap</label
+                          >
+                          <input
+                              type="text"
+                              class="form-control"
+                              name="user-namelengkap"
+                          />
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label"
+                              >Tanggal Lahir</label
+                          >
+                          <input
+                              type="date"
+                              class="form-control"
+                              name="orderdate"
+                          />
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label"
+                              >Nomor Telepon</label
+                          >
+                          <input
+                              type="text"
+                              class="form-control"
+                              name="user-notelp"
+                          />
+                      </div>
+
+                      <div class="mb-3">
                           <label
                               for="inputPassword5"
                               class="form-label"
@@ -57,20 +98,16 @@
                               Must be 8-20 characters long.
                           </div>
                       </div>
-                      <a
-                      href="/home"
-                      class="btn btn-primary"
-                      >LOGIN</a
-                      >
+
                       {{-- <button
                           type="submit"
                           class="btn btn-primary"
                       >
-                          LOGIN
+                          SIGN UP
                       </button> --}}
                       <a
-                          href="/signup-user"
-                          class="btn btn-secondary"
+                          href="/login-user"
+                          class="btn btn-primary"
                           >SIGN UP</a
                       >
                   </form>

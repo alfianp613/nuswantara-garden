@@ -32,9 +32,15 @@ Route::get('/login-petani', function () {
     ]);
 });
 
-Route::get('/signup', function () {
-    return view('signup',[
-        "title" => "Sign Up"
+Route::get('/signup-user', function () {
+    return view('signupuser',[
+        "title" => "User Sign Up"
+    ]);
+});
+
+Route::get('/signup-petani', function () {
+    return view('signuppetani',[
+        "title" => "Petani Sign Up"
     ]);
 });
 
