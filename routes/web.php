@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,47 +23,42 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/login-user', function () {
-    return view('login-user',[
-        "title" => "User Login"
-    ]);
-});
 
 Route::get('/login-petani', function () {
-    return view('login-petani',[
+    return view('petani.login-petani',[
         "title" => "Petani Login"
     ]);
 });
 
-Route::get('/signup-user', function () {
-    return view('signupuser',[
-        "title" => "User Sign Up"
-    ]);
-});
+
 
 Route::get('/signup-petani', function () {
-    return view('signuppetani',[
+    return view('petani.signuppetani',[
         "title" => "Petani Sign Up"
     ]);
 });
 
-Route::get('/home', function () {
-    return view('home',[
-        "title" => "Home"
-    ]);
-});
+
 
 Route::get('/homepetani', function () {
-    return view('homepetani',[
+    return view('petani.homepetani',[
         "title" => "Home"
     ]);
 });
 
 Route::get('/create-project', function () {
-    return view('createproject',[
+    return view('petani.createproject',[
         "title" => "Create Project"
     ]);
 });
 
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
+
+Route::get('/signup-user', [SignupController::class,'index']);
+Route::post('/signup-user', [SignupController::class,'signup']);
+
+Route::get('/login-user', [LoginController::class,'index'])->middleware('guest');
+Route::post('/login-user', [LoginController::class,'signin']);
+
+Route::get('/home', [HomeController::class,'index']);

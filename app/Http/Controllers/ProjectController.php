@@ -8,7 +8,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('projects', [
+        return view('user.projects', [
             "title" => "Project",
             "projects" => Project::all()
         ]);
@@ -16,7 +16,7 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return view('project',[
+        return view('user.project',[
             "title" => "Single Project",
             "project" => $project
         ]);
