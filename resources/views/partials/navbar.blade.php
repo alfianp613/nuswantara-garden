@@ -17,7 +17,7 @@
         <ul class="nabar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Halo, {{auth()->user()->nama}}
+              Halo, {{auth()->user()->name}}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/#">My Profile</a></li>

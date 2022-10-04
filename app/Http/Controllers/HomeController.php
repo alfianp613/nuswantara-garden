@@ -12,4 +12,11 @@ class HomeController extends Controller
             "title" => "Home"
         ]);
     }
+    public function indexPetani()
+    {
+        return view('petani.homepetani',[
+            "title" => "Home"
+        ]);
+    }
+    
 }

@@ -13,24 +13,25 @@
     <!-- section two -->
     <div class="col text-center">
         <section class="two">
-            @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
-            {{ session('success')}}
-            </div>
-            @endif
-
-            @if (session()->has("loginError"))
-            <div class="alert alert-danger" role="alert">
-                {{ session('loginError')}}
-                </div>
-            @endif
             <card class="card" style="width: 18rem">
+                @if(session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                {{ session('success')}}
+                </div>
+                @endif
+    
+                @if (session()->has("loginError"))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('loginError')}}
+                    </div>
+                @endif
                 <div class="card-body">
                     <form
                         id="formtable"
                         method="post"
-                        action="postform.php"
+                        action="/login-petani"
                     >
+                    @csrf
                         <div class="mb-3">
                             <label
                                 for="exampleInputEmail1"
@@ -68,16 +69,16 @@
                                 Must be 8-20 characters long.
                             </div>
                         </div>
-                        <a
+                        {{-- <a
                         href="/homepetani"
                         class="btn btn-primary"
-                        >LOGIN</a>
-                        {{-- <button
+                        >LOGIN</a> --}}
+                        <button
                             type="submit"
                             class="btn btn-primary"
                         >
                             LOGIN
-                        </button> --}}
+                        </button>
                         <a
                             href="/signup-petani"
                             class="btn btn-secondary"

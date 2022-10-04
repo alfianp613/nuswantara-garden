@@ -29,7 +29,7 @@
                   <form
                       id="formtable"
                       method="post"
-                      action="/login-user"
+                      action="/login"
                   >
                   @csrf
                       <div class="mb-3">

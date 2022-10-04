@@ -40,6 +40,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'petani' => [
+            'driver' => 'session',
+            'provider' => 'petani',
+        ],
+
+        'apipetani' => [
+            'driver' => 'token',
+            'provider' => 'petani',
+        ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'user',
+        ],
+
+        'apiuser' => [
+          'driver' => 'token',
+          'provider' => 'user',
+        ],
     ],
 
     /*
@@ -61,6 +80,14 @@ return [
 
     'providers' => [
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        'petani' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        'user' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],

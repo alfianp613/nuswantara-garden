@@ -11,6 +11,6 @@
     You are not signed in.
     @endunless
     @if(auth()->check())
-        <p>Halo,{{auth()->user()->nama}}</p>
+        <p>Halo, {{auth()->user()->name}}</p>
     @endif
 @endsection

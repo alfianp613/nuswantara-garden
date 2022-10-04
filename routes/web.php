@@ -25,17 +25,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login-petani', function () {
-    return view('petani.login-petani',[
-        "title" => "Petani Login"
-    ]);
-});
 
-Route::get('/homepetani', function () {
-    return view('petani.homepetani',[
-        "title" => "Home"
-    ]);
-});
+
+
 
 Route::get('/create-project', function () {
     return view('petani.createproject',[
@@ -48,12 +40,12 @@ Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
 
 Route::get('/signup-user', [SignupController::class,'index']);
 Route::post('/signup-user', [SignupController::class,'signup']);
+Route::get('/signup-petani', [SignupController::class,'indexPetani']);
+Route::post('/signup-petani', [SignupController::class,'signupPetani']);
 
-Route::get('/login-user', [LoginController::class,'index'])->name('login')->middleware('guest');
-Route::post('/login-user', [LoginController::class,'signin']);
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class,'PostLogin']);
 Route::post('/logout', [LoginController::class,'logout']);
 
-Route::get('/home', [HomeController::class,'index'])->middleware('auth');
-
-Route::get('/signup-petani', [SignupPetaniController::class,'index']);
-Route::post('/signup-petani', [SignupPetaniController::class,'signup']);
+Route::get('/home', [HomeController::class,'index'])->middleware('auth:user');
+Route::get('/homepetani', [HomeController::class,'indexPetani'])->middleware('auth:petani');
