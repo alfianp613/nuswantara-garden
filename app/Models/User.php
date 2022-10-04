@@ -40,8 +40,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function phone()
+    public function petani()
     {
-        return $this->hasOne(Petani::class, 'foreign_key');
+        return $this->hasOne(Petani::class, 'id');
     }
 }
