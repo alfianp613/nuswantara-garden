@@ -13,6 +13,17 @@
     <!-- section two -->
     <div class="col text-center">
         <section class="two">
+            @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+            {{ session('success')}}
+            </div>
+            @endif
+
+            @if (session()->has("loginError"))
+            <div class="alert alert-danger" role="alert">
+                {{ session('loginError')}}
+                </div>
+            @endif
             <card class="card" style="width: 18rem">
                 <div class="card-body">
                     <form
