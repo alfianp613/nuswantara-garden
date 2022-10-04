@@ -52,6 +52,14 @@ Route::get('/create-project', function () {
     ]);
 });
 
+Route::get('/profilpetani', function () {
+    return view('petani.profilpetani');
+});
+
+Route::get('/profiluser', function () {
+    return view('user.profiluser');
+});
+
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
 
