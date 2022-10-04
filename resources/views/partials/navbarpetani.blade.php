@@ -13,7 +13,10 @@
             <a class="nav-link {{ ($title==="Create Project")? "active" : "" }}" href="/create-project">Create Project</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Log Out</a>
+            <form action="/logout" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item">Log Out</button>
+            </form>
           </li>
         </ul>
       </div>

@@ -13,23 +13,23 @@
             <a class="nav-link {{ ($title==="Project")? "active" : "" }}" href="/project">Project</a>
           </li>
         </ul> 
+        @if(auth()->check())
         <ul class="nabar-nav ms-auto">
-          @auth
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Halo, {{auth()->user()->nama}}
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Halo, {{auth()->user()->name}}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" href="/#">My Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
-                <form action="">
+                <form action="/logout" method="post">
+                  @csrf
                   <button type="submit" class="dropdown-item">Log Out</button>
                 </form>
             </ul>
           </li>
-
-          @endauth
+          @endif
         </ul>
           
         
