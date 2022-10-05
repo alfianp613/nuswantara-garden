@@ -1,11 +1,8 @@
-@extends('layouts/login') @section('container')
+@extends('layouts/login') 
+@section('container')
 <div class="row">
     <!-- section one -->
-    <div class="col text-center">
-        <section class="one">
-            <h1>INI DESC</h1>
-        </section>
-    </div>
+    @include('partials/slider')
     <!-- end section one -->
 
     <!-- section two -->

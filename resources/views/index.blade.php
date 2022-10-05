@@ -82,5 +82,4 @@
       setTimeout(showSlides, 3000); // Change image every 2 seconds
   }
 </script>
-@include('partials/footer')
 @endsection

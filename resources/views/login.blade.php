@@ -101,5 +101,5 @@
   </div>
   <!-- end section two -->
 </div>
-@include('partials/footer')
+
 @endsection

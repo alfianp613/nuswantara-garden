@@ -4,6 +4,7 @@
         background-color: #2c4a44;
         height: 100px;
         padding-top: 10px;
+        margin-top:50px;
     }
     .text-footer {
         text-decoration: none;
