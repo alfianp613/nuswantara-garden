@@ -6,6 +6,11 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SignupController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\SignupPetaniController;
+use App\Http\Controllers\DashboardPostController;
+>>>>>>> 989398649c5ee7ecdb58cc0cfa9b43580ae6f585
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,6 +44,10 @@ Route::get('/profilpetani', function () {
 
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
 
@@ -54,6 +63,8 @@ Route::post('/logout', [LoginController::class,'logout']);
 Route::get('/home', [HomeController::class,'index'])->middleware('auth:user');
 Route::get('/homepetani', [HomeController::class,'indexPetani'])->middleware('auth:petani');
 
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth:petani');
 Route::get('/profiluser', function () {
     return view('user.profiluser',[
         "title" => "Profile"
