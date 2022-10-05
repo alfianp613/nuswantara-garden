@@ -109,12 +109,12 @@
                             @enderror
                       </div>
                       
-                      <!-- <button
+                      <button
                           type="submit"
                           class="btn"
                       >
                           LOG IN
-                      </button> -->
+                      </button>
                       <a class="btn"
                         type="submit">
                         LOG IN</a>

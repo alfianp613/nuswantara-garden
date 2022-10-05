@@ -35,7 +35,7 @@
       <nav class="navbar navbar-expand-lg fixed-top">
           <!-- navbar-light bg-light -->
           <div class="container-fluid">
-              <a class="navbar-brand" href="#">NUSWANTARA</a>
+              <a class="navbar-brand" href="/">NUSWANTARA</a>
               <button
                   class="navbar-toggler custom-toggler"
                   type="button"
