@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\SignupPetaniController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,19 +31,13 @@ Route::get('/', function () {
 
 
 
-Route::get('/create-project', function () {
-    return view('petani.createproject',[
-        "title" => "Create Project"
-    ]);
-});
+
 
 Route::get('/profilpetani', function () {
     return view('petani.profilpetani');
 });
 
-Route::get('/profiluser', function () {
-    return view('user.profiluser');
-});
+
 
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
@@ -57,3 +53,20 @@ Route::post('/logout', [LoginController::class,'logout']);
 
 Route::get('/home', [HomeController::class,'index'])->middleware('auth:user');
 Route::get('/homepetani', [HomeController::class,'indexPetani'])->middleware('auth:petani');
+
+Route::get('/profiluser', function () {
+    return view('user.profiluser',[
+        "title" => "Profile"
+    ]);
+});
+
+Route::get('/petani/{user:id}', [ProfilController::class,'show'] );
+
+Route::get('/create-project', function () {
+    return view('petani.createproject',[
+        "title" => "Create Project"
+    ]);
+});
+
+Route::get('/create-project/createslug', [ProjectController::class,'checkSlug'])->middleware('auth:petani');
+Route::resource('/create-project/create', ProjectController::class)->middleware('auth:petani');

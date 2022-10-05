@@ -15,12 +15,12 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('petaniid');
             $table->string("title");
             $table->string("slug")->unique();
             $table->enum('status_project',['Perencanaan','Berjalan','Selesai']);
-            $table->string("nama_petani");
-            $table->decimal('dana_terkumpul',$precision=15, $scale=2);
-            $table->decimal('target_pendanaan',$precision=15, $scale=2);
+            $table->decimal('dana_terkumpul',$precision=20, $scale=2)->nullable();
+            $table->decimal('target_pendanaan',$precision=20, $scale=2);
             $table->text('excerpt');
             $table->text('deskripsi_project');
             $table->timestamps();
