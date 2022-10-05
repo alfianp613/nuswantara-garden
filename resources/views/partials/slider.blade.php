@@ -83,7 +83,7 @@
                 <div class="numbertext">1 / 3</div>
                 <img
                     class="img-slider"
-                    src="img/gambar1.jpg"
+                    src="img/Nuswantara.jpg"
                     style="width: 100%"
                 />
                 <div class="text-slider">Caption Text</div>
@@ -93,7 +93,7 @@
                 <div class="numbertext">2 / 3</div>
                 <img
                     class="img-slider"
-                    src="img/gambar2.jpg"
+                    src="img/Nuswantara.jpg"
                     style="width: 100%"
                 />
                 <div class="text-slider">Caption Two</div>
@@ -103,7 +103,7 @@
                 <div class="numbertext">3 / 3</div>
                 <img
                     class="img-slider"
-                    src="img/gambar3.jpg"
+                    src="img/Nuswantara.jpg"
                     style="width: 100%"
                 />
                 <div class="text-slider">Caption Three</div>
