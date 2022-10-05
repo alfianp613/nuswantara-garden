@@ -12,6 +12,32 @@
   <!-- end section one -->
 
   <!-- section two -->
+  <style>
+    /*  */
+    .card {
+        border-radius: 25px;
+        background-color: #b3bb99;
+    }
+    .form-label {
+        color: #2c4a44;
+    }
+    /* END CSS CARD */
+
+    .btn {
+        background-color: #2c4a44;
+    }
+    .btn:hover {
+        background-color: #ece3d4;
+        border-radius: 30px;
+    }
+    .card a {
+        color: #ece3d4;
+    }
+    .card a:hover {
+        color: #2c4a44;
+    }
+    /*  */
+  </style>
   <div class="col text-center">
       <section class="two">
           <card class="card mx-auto" style="width: 18rem">
@@ -83,15 +109,18 @@
                             @enderror
                       </div>
                       
-                      <button
+                      <!-- <button
                           type="submit"
-                          class="btn btn-primary"
+                          class="btn"
                       >
                           LOG IN
-                      </button>
+                      </button> -->
+                      <a class="btn"
+                        type="submit">
+                        LOG IN</a>
                       <a
                           href="/signup-user"
-                          class="btn btn-secondary"
+                          class="btn"
                           >SIGN UP</a
                       >
                   </form>
