@@ -3,17 +3,18 @@
 @section('container')
 <div class="row">
   <!-- section one -->
-  <div class="col text-center">
+  <!-- <div class="col text-center">
       <section class="one">
           <h1>INI SLIDER</h1>
       </section>
-  </div>
+  </div> -->
+  @include('partials/slider')
   <!-- end section one -->
 
   <!-- section two -->
   <div class="col text-center">
       <section class="two">
-          <card class="card" style="width: 18rem">
+          <card class="card mx-auto" style="width: 18rem">
             @if(session()->has('success'))
             <div class="alert alert-success" role="alert">
             {{ session('success')}}
@@ -100,4 +101,5 @@
   </div>
   <!-- end section two -->
 </div>
+@include('partials/footer')
 @endsection
