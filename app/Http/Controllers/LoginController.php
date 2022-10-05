@@ -12,48 +12,9 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('user.login-user',[
-            "title" => "User Login"
+        return view('login',[
+            "title" => "Login Page"
         ]);
-    }
-
-    public function signin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/home')
-                        ->withSuccess('You have Successfully loggedin');
-        }
-  
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
-    }
-
-    public function indexPetani()
-    {
-        return view('petani.login-petani',[
-            "title" => "Petani Login"
-        ]);
-    }
-
-    public function signinPetani(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/home')
-                        ->withSuccess('You have Successfully loggedin');
-        }
-  
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
     public function PostLogin(Request $request)
@@ -74,7 +35,7 @@ class LoginController extends Controller
                 return redirect('/home')->with('sukses','Anda Berhasil Login');
             }
         }
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->with('loginError','Login Gagal!');
     }
     public function logout()
     {

@@ -44,4 +44,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Petani::class, 'id');
     }
+
+    public function project()
+    {
+        return $this->hasMany(Project::class,'petaniid');
+    }
 }
