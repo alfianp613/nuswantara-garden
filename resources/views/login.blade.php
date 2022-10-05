@@ -30,10 +30,10 @@
         background-color: #ece3d4;
         border-radius: 30px;
     }
-    .card a {
+    #text-button {
         color: #ece3d4;
     }
-    .card a:hover {
+    #text-button:hover {
         color: #2c4a44;
     }
     /*  */
@@ -112,15 +112,14 @@
                       <button
                           type="submit"
                           class="btn"
+                          id="text-button"
                       >
                           LOG IN
                       </button>
-                      <!-- <a class="btn"
-                        type="submit">
-                        LOG IN</a> -->
                       <a
                           href="/signup-user"
                           class="btn"
+                          id="text-button"
                           >SIGN UP</a
                       >
                   </form>
@@ -130,5 +129,5 @@
   </div>
   <!-- end section two -->
 </div>
-@include('partials/footer')
+
 @endsection

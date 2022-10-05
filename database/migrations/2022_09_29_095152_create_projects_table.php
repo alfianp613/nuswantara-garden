@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string("title");
             $table->string("slug")->unique();
             $table->enum('status_project',['Perencanaan','Berjalan','Selesai']);
-            $table->decimal('dana_terkumpul',$precision=20, $scale=2)->nullable();
+            $table->decimal('dana_terkumpul',$precision=20, $scale=2)->default(0);
             $table->decimal('target_pendanaan',$precision=20, $scale=2);
             $table->text('excerpt');
             $table->text('deskripsi_project');

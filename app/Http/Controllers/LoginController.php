@@ -29,7 +29,7 @@ class LoginController extends Controller
             //dd($akun);
             if($akun->role =='Petani'){
                 Auth::guard('petani')->LoginUsingId($akun->id);
-                return redirect('/homepetani')->with('sukses','Anda Berhasil Login');
+                return redirect('/dashboard')->with('sukses','Anda Berhasil Login');
             } else if($akun->role =='User'){
                 Auth::guard('user')->LoginUsingId($akun->id);
                 return redirect('/home')->with('sukses','Anda Berhasil Login');

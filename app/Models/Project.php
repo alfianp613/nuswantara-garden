@@ -17,6 +17,11 @@ class Project extends Model
         return $this->belongsTo(User::class,'petaniid');
     } 
 
+    public function payment()
+    {
+        return $this->hasMany(Payment::class,'projectid');
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *

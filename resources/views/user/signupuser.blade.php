@@ -1,17 +1,35 @@
-@extends('layouts/login') @section('container')
+@extends('layouts/login') 
+@section('container')
 <div class="row">
     <!-- section one -->
-    <div class="col text-center">
-        <section class="one">
-            <h1>INI DESC</h1>
-        </section>
-    </div>
+    @include('partials/slider')
     <!-- end section one -->
 
     <!-- section two -->
+    <style>
+    /*  */
+    .card {
+        border-radius: 25px;
+        background-color: #b3bb99;
+    }
+    .form-label {
+        color: #2c4a44;
+    }
+    /* END CSS CARD */
+
+    .btn {
+        background-color: #2c4a44;
+        color: #ece3d4;
+    }
+    .btn:hover {
+        background-color: #ece3d4;
+        border-radius: 30px;
+        color: #2c4a44;
+    }
+  </style>
     <div class="col text-center">
         <section class="two">
-            <card class="card" style="width: 18rem">
+            <card class="card mx-auto" style="width: 18rem">
                 <div class="card-body">
                     <form id="formtable" method="post" action="/signup-user">
                         @csrf
@@ -79,7 +97,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn" id="#text-button">
                             SIGN UP
                         </button>
                     </form>
@@ -89,4 +107,5 @@
     </div>
     <!-- end section two -->
 </div>
+@include('partials/footer')
 @endsection
