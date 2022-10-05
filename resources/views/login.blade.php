@@ -3,17 +3,44 @@
 @section('container')
 <div class="row">
   <!-- section one -->
-  <div class="col text-center">
+  <!-- <div class="col text-center">
       <section class="one">
           <h1>INI SLIDER</h1>
       </section>
-  </div>
+  </div> -->
+  @include('partials/slider')
   <!-- end section one -->
 
   <!-- section two -->
+  <style>
+    /*  */
+    .card {
+        border-radius: 25px;
+        background-color: #b3bb99;
+    }
+    .form-label {
+        color: #2c4a44;
+    }
+    /* END CSS CARD */
+
+    .btn {
+        background-color: #2c4a44;
+    }
+    .btn:hover {
+        background-color: #ece3d4;
+        border-radius: 30px;
+    }
+    .card a {
+        color: #ece3d4;
+    }
+    .card a:hover {
+        color: #2c4a44;
+    }
+    /*  */
+  </style>
   <div class="col text-center">
       <section class="two">
-          <card class="card" style="width: 18rem">
+          <card class="card mx-auto" style="width: 18rem">
             @if(session()->has('success'))
             <div class="alert alert-success" role="alert">
             {{ session('success')}}
@@ -82,15 +109,18 @@
                             @enderror
                       </div>
                       
-                      <button
+                      <!-- <button
                           type="submit"
-                          class="btn btn-primary"
+                          class="btn"
                       >
                           LOG IN
-                      </button>
+                      </button> -->
+                      <a class="btn"
+                        type="submit">
+                        LOG IN</a>
                       <a
                           href="/signup-user"
-                          class="btn btn-secondary"
+                          class="btn"
                           >SIGN UP</a
                       >
                   </form>
@@ -100,4 +130,5 @@
   </div>
   <!-- end section two -->
 </div>
+@include('partials/footer')
 @endsection

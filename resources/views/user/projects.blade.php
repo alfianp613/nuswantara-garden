@@ -11,9 +11,10 @@
         <div class="card-body">
             <h5 class="card-title">     
             <a href="/project/{{ $project->slug }}" class="text-decoration-none">{{$project->title}}</a> </h5>
-            <p class="card-text">Petani: <a href="#" class="text-decoration-none"> {{$project->nama_petani}} </a></p>
+            <p class="card-text">Petani: <a href="/petani/{{$project->petaniid}}" class="text-decoration-none"> {{$project->user->name}} </a></p>
+            <p class="card-text text-muted">Diposting {{$project->created_at->diffForHumans()}}</a></p>
             <p class="card-text">Dana terkumpul sebesar Rp {{$project->dana_terkumpul}} dari target sebesar Rp {{$project->target_pendanaan}} </p>
-            <p class="card-text"> {{$project->excerpt}} </p>
+            <p class="card-text"> {{$project->excerpt }} </p>
             <a href="/project/{{ $project->slug }}" class="text-decoration-none btn btn-primary">Lihat selengkapnya</a>
         </div>
     </div>

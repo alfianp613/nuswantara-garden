@@ -15,8 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(5)->create();
-
         \App\Models\Project::factory(5)->create();
         // Project::create([ "title" => "Project 1", "slug" =>
         // "project-1", "status_project"=> "Perencanaan", "nama_petani" => "Ujang",
