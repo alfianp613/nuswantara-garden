@@ -109,15 +109,15 @@
                             @enderror
                       </div>
                       
-                      <!-- <button
+                      <button
                           type="submit"
                           class="btn"
                       >
                           LOG IN
-                      </button> -->
-                      <a class="btn"
+                      </button>
+                      <!-- <a class="btn"
                         type="submit">
-                        LOG IN</a>
+                        LOG IN</a> -->
                       <a
                           href="/signup-user"
                           class="btn"
