@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\SignupPetaniController;
+use App\Http\Controllers\DashboardPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,10 @@ Route::get('/profiluser', function () {
     return view('user.profiluser');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
 Route::get('/project', [ProjectController::class,'index']);
 Route::get('/project/{project:slug}', [ProjectController::class,'show'] );
 
@@ -57,3 +62,6 @@ Route::post('/logout', [LoginController::class,'logout']);
 
 Route::get('/home', [HomeController::class,'index'])->middleware('auth:user');
 Route::get('/homepetani', [HomeController::class,'indexPetani'])->middleware('auth:petani');
+
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth:petani');
