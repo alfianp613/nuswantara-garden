@@ -14,7 +14,7 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            "petaniid" => 3,
+            "petaniid" => 1,
             "title" => $this->faker->sentence(mt_rand(2,8)), 
             "slug" => $this->faker->slug(),
             "status_project" => "Perencanaan",

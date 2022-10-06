@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DashboardProjectController extends Controller
@@ -36,14 +37,20 @@ class DashboardProjectController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validated = $request-> validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:projects',
             'status_project' => 'required',
             'target_pendanaan' => 'required',
+            'image' => 'image|file|max:10240',
             'deskripsi_project' => 'required'
         ]);
-        
+
+        if($request->file('image')){
+            $validated['image'] =  $request->file('image')->store('project-images');
+        }
+       
         $validated['petaniid'] = auth()->user()->id;
         $validated['excerpt'] = Str::limit(strip_tags($request->deskripsi_project),200);
 
@@ -91,14 +98,22 @@ class DashboardProjectController extends Controller
             'title' => 'required|max:255',
             'status_project' => 'required',
             'target_pendanaan' => 'required',
+            'image' => 'image|file|max:10240',
             'deskripsi_project' => 'required'
         ];
 
         if($request->slug != $project->slug){
             $rules['slug'] = 'required|unique:projects';
         }
-        
+
         $validated = $request->validate($rules);
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validated['image'] =  $request->file('image')->store('project-images');
+        }
         
         $validated['petaniid'] = auth()->user()->id;
         $validated['excerpt'] = Str::limit(strip_tags($request->deskripsi_project),200);
@@ -117,6 +132,9 @@ class DashboardProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->image){
+            Storage::delete($project->image);
+        }
         Project::destroy($project->id);
         return redirect('/dashboard')->with("success",'Project baru berhasil dihapus!');
     }

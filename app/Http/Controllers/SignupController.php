@@ -21,8 +21,13 @@ class SignupController extends Controller
         $validated = $request-> validate([
             'email' => 'required|email:dns|unique:users',
             'name' => 'required|max:255',
-            'password' => 'required|min:8|max:20'
+            'password' => 'required|min:8|max:20',
+            'image' => 'image|mimes:jpeg,jpg,png,bmp,gif,svg|file|max:10240',
         ]);
+        
+        if($request->file('image')){
+            $validated['image'] =  $request->file('image')->store('user-images');
+        }
         
         $validated['role'] = "User";
         $validated['password'] = Hash::make($validated['password']);
@@ -50,8 +55,13 @@ class SignupController extends Controller
             'komoditas'=>'required|max:255',
             'alamat'=>'required|max:255',
             'tanggal_lahir' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png,bmp,gif,svg|file|max:10240',
             'no_telepon' => 'required|max:20'
         ]);
+        
+        if($request->file('image')){
+            $validated['image'] =  $request->file('image')->store('user-images');
+        }
         
         $validated['role'] = "Petani";
         $validated['password'] = Hash::make($validated['password']);
@@ -61,7 +71,8 @@ class SignupController extends Controller
             'email'=>$validated['email'],
             'name'=>$validated['name'],
             'role'=>$validated['role'],
-            'password'=>$validated['password']
+            'password'=>$validated['password'],
+            'image'=>$validated['image']
         ]);
 
         Petani::create([

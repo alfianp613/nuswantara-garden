@@ -3,7 +3,12 @@
 
 @section('container')
     <article>
-        <h2><a href="">{{$project->title}}</a> </h2>
+        @if ($project->image)
+        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail">
+        @else
+        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+        @endif
+        <h2>{{$project->title}}</h2>
         <p>Petani: <a href="/petani/{{$project->petaniid}}"> {{$project->user->name}} </a></p>
         <div class="progress" style="width: 50%">
             <div class="progress-bar" role="progressbar" style="width: {{($project->dana_terkumpul/$project->target_pendanaan)*100}}%;" aria-valuenow="{{$project->dana_terkumpul}}" aria-valuemin="0" aria-valuemax="{{$project->target_pendanaan}}">{{($project->dana_terkumpul/$project->target_pendanaan)*100}}%</div>

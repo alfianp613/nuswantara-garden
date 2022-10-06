@@ -10,7 +10,7 @@
     <section class="two">
         <card class="card" style="width: 18rem">
             <div class="card-body">
-                <form id="formtable" method="post" action="/signup-petani">
+                <form id="formtable" method="post" action="/signup-petani" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap</label>
@@ -154,14 +154,43 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label"
+                            >Upload Foto</label
+                        >
+                        <img class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                        <input class="form-control  @error('image') is-invalid @enderror" 
+                            type="file" id="image" name="image" multiple onchange="previewImage()">
+                        @error('image')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
                     <button type="submit" class="btn btn-primary">
                         SIGN UP
                     </button>
                 </form>
+                <p class="mt-2">Sudah memiliki akun? login <a href="/login">di sini</a></p>
             </div>
         </card>
     </section>
 </div>
+<script>
+    function previewImage(){
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent){
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+</script>
 <!-- end section two -->
 
 
