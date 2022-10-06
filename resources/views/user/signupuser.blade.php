@@ -8,6 +8,9 @@
     <!-- section two -->
     <style>
     /*  */
+    .two{
+        padding-top: 20px;
+    }
     .card {
         border-radius: 25px;
         background-color: #b3bb99;
@@ -25,6 +28,14 @@
         background-color: #ece3d4;
         border-radius: 30px;
         color: #2c4a44;
+    }
+    .p,a{
+        color: #2c4a44;
+        text-decoration: none;
+    }
+    .text-disini:hover{
+        background-color: #2c4a44;
+        color: #ece3d4;
     }
   </style>
     <div class="col text-center">
@@ -114,7 +125,7 @@
                             SIGN UP
                         </button>
                     </form>
-                    <p class="mt-2">Sudah memiliki akun? login <a href="/login">di sini</a></p>
+                    <p class="mt-2">Sudah memiliki akun? login <a href="/login" class="text-disini">di sini</a></p>
                 </div>
             </card>
         </section>

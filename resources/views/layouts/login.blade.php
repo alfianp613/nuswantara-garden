@@ -11,6 +11,13 @@
     <title>{{$title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+  <style>
+        /* CSS BODY */
+        body {
+            background-color: #ece3d4;
+        }
+        /* END CSS BODY */
+    </style>
   <body>
     @include('partials.navbarlogin')
       <div class="container mt-4 pt-5" >

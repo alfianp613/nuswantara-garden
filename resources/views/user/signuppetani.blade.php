@@ -6,9 +6,33 @@
     @include('partials/slider')
     <!-- end section one -->
  <!-- section two -->
+ <style>
+    /*  */
+    .two{
+        padding-top: 20px;
+    }
+    .card {
+        border-radius: 25px;
+        background-color: #b3bb99;
+    }
+    .form-label {
+        color: #2c4a44;
+    }
+    /* END CSS CARD */
+
+    .btn {
+        background-color: #2c4a44;
+        color: #ece3d4;
+    }
+    .btn:hover {
+        background-color: #ece3d4;
+        border-radius: 30px;
+        color: #2c4a44;
+    }
+</style>
  <div class="col text-center">
     <section class="two">
-        <card class="card" style="width: 18rem">
+        <card class="card mx-auto" style="width: 18rem">
             <div class="card-body">
                 <form id="formtable" method="post" action="/signup-petani" enctype="multipart/form-data">
                     @csrf
@@ -372,13 +396,13 @@
 
                         <button
                             type="submit"
-                            class="btn btn-primary"
+                            class="btn"
                         >
                             SIGN UP
                         </button>
                         <a
                             href="/login-petani"
-                            class="btn btn-secondary"
+                            class="btn"
                             >SIGN UP</a
                         >
                     </form>

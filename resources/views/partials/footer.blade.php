@@ -2,7 +2,7 @@
 <style>
     .footer {
         background-color: #2c4a44;
-        height: 100px;
+        height: 50px;
         padding-top: 10px;
         margin-top:50px;
     }
@@ -15,55 +15,6 @@
     }
 </style>
 <footer class="footer">
-    <div class="container text-footer text-center">
-        <div class="row">
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-            <div class="col">
-                <a class="text-footer" href="#">satu</a>
-            </div>
-        </div>
-    </div>
     <p class="text-footer text-center">&copy; 2022 Nuswantara</p>
 </footer>
 <!-- END FOOTER -->
