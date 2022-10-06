@@ -18,11 +18,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('dashboard.index');
-=======
         
->>>>>>> a3c9af15c13ef7d04ddbdaba41ced27b83e8c710
     }
 
     /**

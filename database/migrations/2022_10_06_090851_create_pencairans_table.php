@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePetanisTable extends Migration
+class CreatePencairansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreatePetanisTable extends Migration
      */
     public function up()
     {
-        Schema::create('petanis', function (Blueprint $table) {
-            $table->foreignId('id');
-            $table->date('tanggal_lahir');
-            $table->string('no_telepon');
-            $table->bigInteger('nik')->unique();
-            $table->string('komoditas');
-            $table->string('alamat');
+        Schema::create('pencairans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('userid');
+            $table->foreignId('projectid');
+            $table->decimal('nominal',$precision=20, $scale=2);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreatePetanisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petanis');
+        Schema::dropIfExists('pencairans');
     }
 }

@@ -35,7 +35,7 @@ class SignupController extends Controller
 
     public function indexPetani()
     {
-        return view('petani.signuppetani',[
+        return view('user.signuppetani',[
             "title" => "Petani Sign Up"
         ]);
     }
@@ -46,7 +46,7 @@ class SignupController extends Controller
             'email' => 'required|email:dns|unique:users',
             'name' => 'required|max:255',
             'password' => 'required|min:8|max:20',
-            'nik'=>'required|min:16',
+            'nik'=>'required|min:16|unique:petanis',
             'komoditas'=>'required|max:255',
             'alamat'=>'required|max:255',
             'tanggal_lahir' => 'required',

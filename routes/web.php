@@ -74,11 +74,10 @@ Route::get('/donasi/{project:slug}/{user:id}', [PaymentController::class,'indexd
 Route::post('/donasi/{project:slug}/{user:id}', [PaymentController::class,'donate'])->middleware('auth:user');
 
 
-<<<<<<< HEAD
 Route::get('/dashboard/myprofile', function () {
     return view('dashboard.myprofile.index');
 });
-=======
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth:petani');
 Route::resource('/dashboard/project', DashboardProjectController::class)->middleware('auth:petani');
->>>>>>> a3c9af15c13ef7d04ddbdaba41ced27b83e8c710
+Route::get('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentController::class,'indexpencairan'])->middleware('auth:petani');
+Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentController::class,'pencairan'])->middleware('auth:petani');
