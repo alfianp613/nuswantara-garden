@@ -8,6 +8,9 @@
     <!-- section two -->
     <style>
     /*  */
+    .two{
+        padding-top: 20px;
+    }
     .card {
         border-radius: 25px;
         background-color: #b3bb99;
@@ -107,5 +110,4 @@
     </div>
     <!-- end section two -->
 </div>
-@include('partials/footer')
 @endsection

@@ -5,6 +5,9 @@
   @include('partials/slider')
   <style>
     /*  */
+    .content{
+        padding-top: 20px;
+    }
     .card {
         border-radius: 25px;
         background-color: #b3bb99;
