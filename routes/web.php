@@ -79,5 +79,8 @@ Route::get('/dashboard/myprofile', function () {
 });
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth:petani');
 Route::resource('/dashboard/project', DashboardProjectController::class)->middleware('auth:petani');
+<<<<<<< HEAD
+=======
 Route::get('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentController::class,'indexpencairan'])->middleware('auth:petani');
 Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentController::class,'pencairan'])->middleware('auth:petani');
+>>>>>>> 04bd8732e76008f14d37aec6942450dcea0454d8
