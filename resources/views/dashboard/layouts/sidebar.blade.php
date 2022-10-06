@@ -2,21 +2,21 @@
       <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/dashboard">
+            <a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" aria-current="page" href="/dashboard">
               <span data-feather="home" class="align-text-bottom"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('dashboard/myprofile') ? 'active' : ''}}" href="/dashboard/myprofile">
               <span data-feather="user" class="align-text-bottom"></span>
               My Profil
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard/posts">
+            <a class="nav-link {{ Request::is('dashboard/createproject') ? 'active' : ''}}" href="/dashboard/createproject">
               <span data-feather="file-text" class="align-text-bottom"></span>
-              My Post
+              Create Project
             </a>
         </ul>
       </div>

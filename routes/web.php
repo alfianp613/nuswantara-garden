@@ -77,7 +77,6 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
+Route::get('/dashboard/myprofile', function () {
+    return view('dashboard.myprofile.index');
 });
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth:petani');
