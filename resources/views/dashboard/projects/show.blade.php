@@ -2,8 +2,7 @@
 
 @section('container')
 <article>
-    <h2>{{$project->title}}</h2>
-    <div class="container">
+    <div class="container mt-2 mb-1">
         <a href="/dashboard" class="btn btn-secondary">Kembali</a> 
         <a href="/dashboard/project/{{$project->slug}}/edit" class="btn btn-success">Update</a> 
         <form action="/dashboard/project/{{$project->slug}}" method="post" class="d-inline"> 
@@ -12,6 +11,7 @@
             <button class="btn btn-danger border-0" onclick="return confirm('Apakah kamu yakin?')"> Delete</button>
         </form>
     </div>
+    <h2>{{$project->title}}</h2>
     
     <br>
     <div class="progress" style="width: 50%">

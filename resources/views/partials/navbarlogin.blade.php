@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg fixed-top">
             <!-- navbar-light bg-light -->
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">NUSWANTARA</a>
+                <a class="navbar-brand" href="/"><img src="/img/logohead.png" alt="logo" height="30px">NUSWANTARA</a>
                 <button
                     class="navbar-toggler custom-toggler"
                     type="button"

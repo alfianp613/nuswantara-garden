@@ -14,11 +14,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/createproject') ? 'active' : ''}}" href="/dashboard/createproject">
             <a class="nav-link {{Request::is('dashboard/project/create') ? 'active' : ''}}" href="/dashboard/project/create">
               <span data-feather="file-text" class="align-text-bottom"></span>
               Create Project
             </a>
+          </li>
         </ul>
       </div>
     </nav>

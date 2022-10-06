@@ -49,6 +49,7 @@
             <div class="mb-3">
                 <label class="form-label">Status Project</label>
                 <select class="form-select @error('slug') is-invalid @enderror" id="status_project" name="status_project" required>
+                    <option value="{{$project->status_project}}" selected >{{$project->status_project}}</option>
                     <option value="Perencanaan">Perencanaan</option>
                     <option value="Berjalan">Berjalan</option>
                     <option value="Selesai">Selesai</option>
