@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+
 use App\Http\Controllers\Controller;
+use App\Models\Post;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
 {
@@ -15,7 +18,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        return view('dashboard.posts.index');
+        
     }
 
     /**
@@ -25,7 +28,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,7 +39,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
