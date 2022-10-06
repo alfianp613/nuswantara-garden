@@ -7,7 +7,12 @@
     @foreach ($projects as $project)
     <article class="mb-5 border-bottom pb-4">
     <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
+        @if ($project->image)
+        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail" height="400px">
+        @else
+        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+        @endif
+       
         <div class="card-body">
             <h5 class="card-title">     
             <a href="/project/{{ $project->slug }}" class="text-decoration-none">{{$project->title}}</a> </h5>

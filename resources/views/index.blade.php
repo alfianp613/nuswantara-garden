@@ -45,12 +45,12 @@
                   lead-in to additional content.
               </p>
               <a
-                  href="/login"
+                  href="/signup-user"
                   class="btn button-user-petani"
                   >DONASI</a
               >
               <a
-                  href="/login"
+                  href="/signup-petani"
                   class="btn button-user-petani"
                   >GALANG DANA</a
               >

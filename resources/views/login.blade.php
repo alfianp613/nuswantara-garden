@@ -43,15 +43,16 @@
   </style>
   <div class="col text-center">
       <section class="two">
+        
           <card class="card mx-auto" style="width: 18rem">
             @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success mt-5" role="alert">
             {{ session('success')}}
             </div>
             @endif
 
             @if (session()->has("loginError"))
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger mt-2" role="alert">
                 {{ session('loginError')}}
                 </div>
             @endif

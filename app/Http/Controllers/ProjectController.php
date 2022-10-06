@@ -32,24 +32,6 @@ class ProjectController extends Controller
         return response()->json(['slug'=>$slug]);
     }
 
-    public function store(Request $request){
-        $validated = $request-> validate([
-            'title' => 'required|max:255',
-            'slug' => 'required|unique:projects',
-            'status_project' => 'required',
-            'target_pendanaan' => 'required',
-            'deskripsi_project' => 'required'
-        ]);
-        
-        $validated['petaniid'] = auth()->user()->id;
-        $validated['excerpt'] = Str::limit(strip_tags($request->deskripsi_project),200);
-
-        Project::create($validated);
-
-        return redirect('/homepetani')->with("success",'Project baru berhasil dibuat');
-
-        
-    }
 
     
 }

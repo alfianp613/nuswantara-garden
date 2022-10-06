@@ -8,7 +8,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/myprofile') ? 'active' : ''}}" href="/dashboard/myprofile">
+            <a class="nav-link {{ Request::is('dashboard/myprofile') ? 'active' : ''}}" href="/dashboard/myprofile/{{auth()->user()->id}}">
               <span data-feather="user" class="align-text-bottom"></span>
               My Profil
             </a>

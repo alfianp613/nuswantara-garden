@@ -11,6 +11,12 @@
             <button class="btn btn-danger border-0" onclick="return confirm('Apakah kamu yakin?')"> Delete</button>
         </form>
     </div>
+    @if ($project->image)
+        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail">
+    @else
+        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+    @endif
+
     <h2>{{$project->title}}</h2>
     
     <br>

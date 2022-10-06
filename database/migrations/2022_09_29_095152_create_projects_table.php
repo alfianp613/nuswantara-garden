@@ -18,6 +18,7 @@ class CreateProjectsTable extends Migration
             $table->foreignId('petaniid');
             $table->string("title");
             $table->string("slug")->unique();
+            $table->string("image")->nullable();
             $table->enum('status_project',['Perencanaan','Berjalan','Selesai']);
             $table->decimal('dana_terkumpul',$precision=20, $scale=2)->default(0);
             $table->decimal('dana_terambil',$precision=20, $scale=2)->default(0);
