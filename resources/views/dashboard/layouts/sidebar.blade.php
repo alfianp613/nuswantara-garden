@@ -8,15 +8,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('dashboard/myprofile') ? 'active' : ''}}" href="/dashboard/myprofile">
               <span data-feather="user" class="align-text-bottom"></span>
               My Profil
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/createproject') ? 'active' : ''}}" href="/dashboard/createproject">
             <a class="nav-link {{Request::is('dashboard/project/create') ? 'active' : ''}}" href="/dashboard/project/create">
               <span data-feather="file-text" class="align-text-bottom"></span>
-              My Post
+              Create Project
             </a>
         </ul>
       </div>
