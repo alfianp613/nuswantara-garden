@@ -30,19 +30,22 @@
     .card a:hover {
         color: #2c4a44;
     }
+    .main-text{
+        font-weight: bold;
+        color: #2c4a44;
+    }
     /*  */
   </style>
   <div class="col-lg-4">
-    <h1>GET IMPACT NOW!</h1>
+    <h1 class="main-text text-center">Get Impact Now!</h1>
     <div class="content text-center">
       <card class="card mx-auto" style="width: 18rem">
           <div class="card-body">
               <h5 class="card-title">
-                  Special title treatment
+                  Nuswantara Garden
               </h5>
               <p class="card-text">
-                  With supporting text below as a natural
-                  lead-in to additional content.
+              Mari bergabung dengan kami berikan dampak untuk negeri dengan membantu petani!
               </p>
               <a
                   href="/signup-user"

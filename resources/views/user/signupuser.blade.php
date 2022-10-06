@@ -29,6 +29,14 @@
         border-radius: 30px;
         color: #2c4a44;
     }
+    .p,a{
+        color: #2c4a44;
+        text-decoration: none;
+    }
+    .text-disini:hover{
+        background-color: #2c4a44;
+        color: #ece3d4;
+    }
   </style>
     <div class="col text-center">
         <section class="two">
@@ -117,15 +125,13 @@
                             SIGN UP
                         </button>
                     </form>
-                    <p class="mt-2">Sudah memiliki akun? login <a href="/login">di sini</a></p>
+                    <p class="mt-2">Sudah memiliki akun? login <a href="/login" class="text-disini">di sini</a></p>
                 </div>
             </card>
         </section>
     </div>
     <!-- end section two -->
 </div>
-<<<<<<< HEAD
-=======
 
 <script>
     function previewImage(){
@@ -142,5 +148,4 @@
             }
         }
 </script>
->>>>>>> 9263e88f4ae8f87e1d3f0dd760ad34485bb7462b
 @endsection
