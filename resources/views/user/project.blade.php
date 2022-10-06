@@ -9,6 +9,7 @@
             <div class="progress-bar" role="progressbar" style="width: {{($project->dana_terkumpul/$project->target_pendanaan)*100}}%;" aria-valuenow="{{$project->dana_terkumpul}}" aria-valuemin="0" aria-valuemax="{{$project->target_pendanaan}}">{{($project->dana_terkumpul/$project->target_pendanaan)*100}}%</div>
           </div>
         <p>Dana terkumpul sebesar Rp {{$project->dana_terkumpul}} dari target sebesar Rp {{$project->target_pendanaan}} </p>
+        <p class="text-muted">Diposting {{$project->created_at->diffForHumans()}}</a></p>
         <p> {!! $project->deskripsi_project !!} </p>
         
     </article>

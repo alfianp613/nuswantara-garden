@@ -14,6 +14,7 @@
             <th scope="col">#</th>
             <th scope="col">Nama Project</th>
             <th scope="col">Nominal Donasi</th>
+            <th scope="col">Status Project</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <th scope="row">{{$loop->iteration}}</th>
                 <td>{{$project->project->title}}</td>
                 <td>Rp {{$nominal[$project->project->id]}}</td>
+                <td>{{$project->project->status_project}}</td>
                 <td><a href="/donasi/{{$project->project->slug}}/{{auth()->user()->id}}" class="btn btn-primary">Donasi Lagi</a></td>
             </tr>
         @endforeach

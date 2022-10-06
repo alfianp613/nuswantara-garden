@@ -6,7 +6,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SignupController;
-use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardProjectController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,15 +69,16 @@ Route::get('/create-project', function () {
 });
 
 Route::get('/create-project/createslug', [ProjectController::class,'checkSlug'])->middleware('auth:petani');
-Route::resource('/create-project/create', ProjectController::class)->middleware('auth:petani');
 
 Route::get('/donasi/{project:slug}/{user:id}', [PaymentController::class,'indexdonate'])->middleware('auth:user');
 Route::post('/donasi/{project:slug}/{user:id}', [PaymentController::class,'donate'])->middleware('auth:user');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
 
+<<<<<<< HEAD
 Route::get('/dashboard/myprofile', function () {
     return view('dashboard.myprofile.index');
 });
+=======
+Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth:petani');
+Route::resource('/dashboard/project', DashboardProjectController::class)->middleware('auth:petani');
+>>>>>>> a3c9af15c13ef7d04ddbdaba41ced27b83e8c710
