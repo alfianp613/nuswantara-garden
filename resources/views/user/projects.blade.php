@@ -7,11 +7,14 @@
     @foreach ($projects as $project)
     <article class="mb-5 border-bottom pb-4">
     <div class="card mb-3">
-        @if ($project->image)
-        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail" height="400px">
-        @else
-        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
-        @endif
+        <div class="container" style="max-height:350px; overflow:hidden;">
+            @if ($project->image)
+            <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail" height="400px">
+            @else
+            <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+            @endif
+        </div>
+        
        
         <div class="card-body">
             <h5 class="card-title">     

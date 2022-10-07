@@ -91,7 +91,7 @@
     </div>
 
   <div class="my-5 p-5 bg-body rounded shadow-sm">
-    <h6 class="border-bottom pb-2 mb-0">Biografi Petani</h6>
+    <h6 class="border-bottom pb-2 mb-0">Biodata Petani</h6>
     <div class="d-flex text-muted pt-3">
       <p class="pb-3 mb-0 small lh-sm border-bottom">
         <strong class="d-block text-gray-dark">Nama</strong>
@@ -137,7 +137,11 @@
    @foreach ($projects as $project)
    <article class="mb-5 border-bottom pb-4">
    <div class="card mb-3">
-       <img src="..." class="card-img-top" alt="...">
+        @if ($project->image)
+        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail" height="400px">
+        @else
+        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+        @endif
        <div class="card-body">
            <h5 class="card-title">     
            <a href="/project/{{ $project->slug }}" class="text-decoration-none">{{$project->title}}</a> </h5>

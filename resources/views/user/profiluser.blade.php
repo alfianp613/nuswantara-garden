@@ -92,7 +92,7 @@
     </div>
 
   <div class="my-5 p-5 bg-body rounded shadow-sm">
-    <h6 class="border-bottom pb-2 mb-0">Biografi Petani</h6>
+    <h6 class="border-bottom pb-2 mb-0">Biodata User</h6>
     <div class="d-flex text-muted pt-3">
       <p class="pb-3 mb-0 small lh-sm border-bottom">
         <strong class="d-block text-gray-dark">Nama</strong>

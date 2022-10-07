@@ -4,10 +4,13 @@
 @section('container')
     <article>
         @if ($project->image)
-        <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail">
-        @else
-        <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
-        @endif
+        <div class="container col-sm-9">
+            <img src="{{asset('storage/'.$project->image)}}" class="card-img-top" alt="thumbnail">
+            @else
+            <img src="https://source.unsplash.com/1200x400?pertanian,agriculture" class="card-img-top" alt="thumbnail">
+            @endif
+        </div>
+       
         <h2>{{$project->title}}</h2>
         <p>Petani: <a href="/petani/{{$project->petaniid}}"> {{$project->user->name}} </a></p>
         <div class="progress" style="width: 50%">
