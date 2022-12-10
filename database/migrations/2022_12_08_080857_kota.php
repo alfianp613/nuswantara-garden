@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePencairansTable extends Migration
+class Kota extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreatePencairansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pencairans', function (Blueprint $table) {
+        Schema::create('kota', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('petaniid');
-            $table->foreignId('projectid');
-            $table->decimal('nominal',$precision=20, $scale=2);
-            $table->timestamps();
+            $table->foreignId('kode_propinsi');
+            $table->string("nama_kota");
         });
     }
 
@@ -29,6 +27,6 @@ class CreatePencairansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pencairans');
+        Schema::dropIfExists('kota');
     }
 }

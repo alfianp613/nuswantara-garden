@@ -29,7 +29,7 @@ class PaymentController extends Controller
 
         Payment::create($validated);
 
-        return redirect('/project');
+        return redirect('/home');
     }
     public function indexpencairan(Project $project)
     {

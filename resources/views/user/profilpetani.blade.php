@@ -106,18 +106,6 @@
     </div>
     <div class="d-flex text-muted pt-3">
       <p class="pb-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">NIK</strong>
-        {{$user->petani->nik}}  
-      </p>
-    </div>
-    <div class="d-flex text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Tanggal Lahir</strong>
-        {{$user->petani->tanggal_lahir}}    
-      </p>
-    </div>
-    <div class="d-flex text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-sm border-bottom">
         <strong class="d-block text-gray-dark">No. Telepon</strong>
         {{$user->petani->no_telepon}}  
       </p>
