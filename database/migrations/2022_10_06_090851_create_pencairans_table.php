@@ -15,7 +15,7 @@ class CreatePencairansTable extends Migration
     {
         Schema::create('pencairans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userid');
+            $table->foreignId('petaniid');
             $table->foreignId('projectid');
             $table->decimal('nominal',$precision=20, $scale=2);
             $table->timestamps();

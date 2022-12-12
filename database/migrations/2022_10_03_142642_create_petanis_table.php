@@ -14,11 +14,14 @@ class CreatePetanisTable extends Migration
     public function up()
     {
         Schema::create('petanis', function (Blueprint $table) {
-            $table->foreignId('id');
+            $table->id();
+            $table->foreignId('user_id');
             $table->date('tanggal_lahir');
             $table->string('no_telepon');
             $table->bigInteger('nik')->unique();
-            $table->string('komoditas');
+            $table->foreignId('kode_komoditas');
+            $table->foreignId('kode_propinsi');
+            $table->foreignId('kode_kota');
             $table->string('alamat');
             $table->timestamps();
         });

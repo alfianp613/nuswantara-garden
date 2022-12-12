@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Petani;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,9 +16,80 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
-        \App\Models\Project::factory(5)->create();
+        // \App\Models\User::factory(200)->create();
+
+        $faker = Faker::create('id_ID');
+        // $komoditasid = DB::table('komoditas')->pluck('kode_komoditas');
+        // $kotaid = DB::table('kota')->pluck('id');
+
+        // foreach (range(1,200) as $index) {
+        //     $kota_id = $faker->randomElement($kotaid);
+        //     $kota = DB::table('kota')->where('id',"=" ,$kota_id)->get();
+        //     DB::table('petanis')->insert([
+        //         'user_id' => $index,
+        //         'tanggal_lahir' => $faker->date('Y-m-d') ,
+        //         'no_telepon' => $faker->phoneNumber(),
+        //         'nik'=>$faker->nik(),
+        //         'kode_komoditas' => $faker->randomElement($komoditasid),
+        //         'kode_propinsi' => $kota[0]->kode_propinsi,
+        //         'kode_kota' => $kota_id,
+        //         'alamat' => $faker->address()
+        //     ]);
+        // }
+
+        // \App\Models\User::factory(100)->create();
+
+        // $petani_id = DB::table('petanis')->pluck('id');
+        // $status = ["Perencanaan","Berjalan","Selesai"];
+        // $target = [10000000,20000000,30000000,40000000,50000000];
+
+        // foreach (range(1,250) as $index) {
+        //     DB::table('projects')->insert([
+        //         "petaniid" => $faker->randomElement($petani_id),
+        //         "title" => $faker->sentence(mt_rand(2,8)), 
+        //         "slug" => $faker->slug(),
+        //         "status_project" => $faker->randomElement($status),
+        //         "dana_terkumpul" => 0,
+        //         "dana_terambil" => 0,
+        //         "target_pendanaan" => $faker->randomElement($target),
+        //         "excerpt" => $faker->paragraph(30),
+        //         "deskripsi_project" => $faker->paragraph(150),
+        //         "created_at" => $faker->dateTimeBetween('-1 year', '-1 week')
+        //     ]);
+        // }
+
+        // $projects_id = DB::table('projects')->pluck('id');
+
+        // foreach (range(1,3000) as $index) {
+        //     $project_id = $faker->randomElement($projects_id);
+        //     $project = DB::table('projects')->where('id',"=" ,$project_id)->get();
+        //     DB::table('payments')->insert([
+        //         "userid" => $faker->numberBetween(201, 400),
+        //         "projectid" => $project_id, 
+        //         "nominal" => $faker->numberBetween(10000, $project[0]->target_pendanaan -  $project[0]->dana_terkumpul-1500000),
+        //         "created_at" => $faker->dateTimeBetween($project[0]->created_at, '-1 week')
+        //     ]);
+        // }
+        
+
+        $projects_id = DB::table('projects')->pluck('id');
+        foreach (range(1,2000) as $index) {
+            $project_id = $faker->randomElement($projects_id);
+            $project = DB::table('projects')->where('id',"=" ,$project_id)->get();
+            DB::table('pencairans')->insert([
+                "petaniid" => $project[0]->petaniid,
+                "projectid" => $project_id, 
+                "nominal" => $faker->numberBetween(10000, $project[0]->dana_terkumpul -  $project[0]->dana_terambil - 1500000),
+                "created_at" => $faker->dateTimeBetween($project[0]->created_at, '-1 week')
+            ]);
+        }
+        
+        
+       
+        
         // Project::create([ "title" => "Project 1", "slug" =>
         // "project-1", "status_project"=> "Perencanaan", "nama_petani" => "Ujang",
         // "dana_terkumpul" => 300000, "target_pendanaan" => 50000000, "excerpt" => "Lorem

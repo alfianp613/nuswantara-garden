@@ -9,4 +9,14 @@ class Pencairan extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function petani()
+    {
+        return $this->belongsTo(Petani::class,'petaniid');
+    } 
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class,'projectid');
+    } 
 }

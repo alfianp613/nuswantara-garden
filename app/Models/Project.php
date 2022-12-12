@@ -22,6 +22,11 @@ class Project extends Model
         return $this->hasMany(Payment::class,'projectid');
     }
 
+    public function pencairan()
+    {
+        return $this->hasMany(Pencairan::class,'projectid');
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *
