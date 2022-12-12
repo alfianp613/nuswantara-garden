@@ -15,4 +15,24 @@ class Petani extends Model
     {
         return $this->belongsTo(User::class, 'id');
     }
+
+    public function pencairan()
+    {
+        return $this->hasMany(Pencairan::class,'petaniid');
+    }
+
+    public function propinsi()
+    {
+        return $this->morphOne(Propinsi::class,'propinsiable');
+    }
+
+    public function kota()
+    {
+        return $this->morphOne(Kota::class,'kotaable');
+    }
+
+    public function komoditas()
+    {
+        return $this->morphOne(Komoditas::class,'komoditasable');
+    }
 }
