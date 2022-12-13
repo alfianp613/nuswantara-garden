@@ -9,8 +9,12 @@ class Komoditas extends Model
 {
     use HasFactory;
 
-    public function komoditasable()
+    public function petani()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Petani::class,'kode_komoditas');
     }
+
+    protected $fillable = [
+        "nama_komoditas"
+    ];
 }

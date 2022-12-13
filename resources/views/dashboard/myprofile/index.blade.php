@@ -127,7 +127,17 @@
     <div class="d-flex text-muted pt-3">
       <p class="pb-3 mb-0 small lh-sm border-bottom">
         <strong class="d-block text-gray-dark">Komoditas</strong>
-        {{$user->petani->komoditas}} </p>
+        {{$komoditas[0]->nama_komoditas}} </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Propinsi</strong>
+        {{$propinsi[0]->nama_propinsi}} </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Kota</strong>
+        {{$kota[0]->nama_kota}} </p>
     </div>
     <div class="d-flex text-muted pt-3">
       <p class="pb-3 mb-0 small lh-sm border-bottom">

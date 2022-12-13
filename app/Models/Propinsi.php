@@ -9,13 +9,17 @@ class Propinsi extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "id","nama_propinsi"
+    ];
+
     public function kota()
     {
         return $this->hasMany(Kota::class,'kode_propinsi');
     }
 
-    public function propinsiable()
+    public function petani()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Petani::class,'kode_propinsi');
     }
 }

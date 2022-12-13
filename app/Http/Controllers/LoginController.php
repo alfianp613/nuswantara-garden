@@ -33,6 +33,9 @@ class LoginController extends Controller
             } else if($akun->role =='User'){
                 Auth::guard('user')->LoginUsingId($akun->id);
                 return redirect('/home')->with('sukses','Anda Berhasil Login');
+            } else if($akun->role =='Admin'){
+                Auth::guard('admin')->LoginUsingId($akun->id);
+                return redirect('/admin/dashboard')->with('sukses','Anda Berhasil Login');
             }
         }
         return redirect("login")->with('loginError','Login Gagal!');

@@ -148,15 +148,61 @@
                         <label class="form-label"
                             >Komoditas</label
                         >
-                        <input
-                            type="text"
-                            class="form-control @error('komoditas') is-invalid @enderror"
-                            name="komoditas"
-                            id="komoditas"
-                            required
-                            value="{{ old('komoditas') }}"
-                        />
+                        <select  
+                        id="komoditas" 
+                        name="komoditas"
+                        class="form-control" 
+                        required
+                        value="{{ old('komoditas') }}">
+                            <option value="">Pilih Komoditas</option>
+                            @foreach ($komoditas as $data)
+                            <option value="{{$data->kode_komoditas}}">
+                                {{$data->nama_komoditas}}
+                            </option>
+                            @endforeach
+                        </select>
                         @error('komoditas')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"
+                            >Propinsi</label
+                        >
+                        <select  
+                        id="propinsi" 
+                        name="propinsi"
+                        class="form-control" 
+                        required
+                        value="{{ old('propinsi') }}">
+                            <option value="">Pilih Propinsi</option>
+                            @foreach ($propinsi as $data)
+                            <option value="{{$data->id}}">
+                                {{$data->nama_propinsi}}
+                            </option>
+                            @endforeach
+                        </select>
+                        @error('propinsi')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"
+                            >Kota</label
+                        >
+                        <select  
+                        id="kota" 
+                        name="kota"
+                        class="form-control" 
+                        required
+                        value="{{ old('kota') }}">
+                            <option value="">Pilih Kota</option>
+                        </select>
+                        @error('kota')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
@@ -200,6 +246,7 @@
         </card>
     </section>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function previewImage(){
             const image = document.querySelector('#image');
@@ -214,6 +261,33 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+        $(document).ready(function () {
+  
+            /*------------------------------------------
+            --------------------------------------------
+            Country Dropdown Change Event
+            --------------------------------------------
+            --------------------------------------------*/
+            $('#propinsi').on('change', function () {
+                var kode_propinsi = this.value;
+                $.ajax({
+                    url: "{{url('api/kota')}}",
+                    type: "POST",
+                    data: {
+                        kode_propinsi: kode_propinsi,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $.each(result, function (key, value) {
+                            $("#kota").append('<option value="' + value
+                                .id + '">' + value.nama_kota + '</option>');
+                        });
+                    }
+                });
+            });
+
+            });
 </script>
 <!-- end section two -->
 

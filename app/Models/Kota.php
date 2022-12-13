@@ -9,13 +9,17 @@ class Kota extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "id","kode_propinsi","nama_kota"
+    ];
+
     public function kota()
     {
         return $this->belongsTo(Propinsi::class,'id');
     }
 
-    public function kotaable()
+    public function petani()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Petani::class,'kode_kota');
     }
 }

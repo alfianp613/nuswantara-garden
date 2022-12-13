@@ -28,9 +28,9 @@ Route::get('/', function () {
     ]);
 })->middleware('guest');
 
-Route::get('/profilpetani', function () {
-    return view('petani.profilpetani');
-});
+// Route::get('/profilpetani', function () {
+//     return view('petani.profilpetani');
+// });
 
 
 
@@ -43,6 +43,8 @@ Route::get('/signup-user', [SignupController::class,'index']);
 Route::post('/signup-user', [SignupController::class,'signup']);
 Route::get('/signup-petani', [SignupController::class,'indexPetani']);
 Route::post('/signup-petani', [SignupController::class,'signupPetani']);
+
+Route::post('/api/kota', [SignupController::class,'fetchKota']);
 
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'PostLogin']);

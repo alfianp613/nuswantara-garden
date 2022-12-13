@@ -23,16 +23,16 @@ class Petani extends Model
 
     public function propinsi()
     {
-        return $this->morphOne(Propinsi::class,'propinsiable');
+        return $this->hasOne(Propinsi::class,'id');
     }
 
     public function kota()
     {
-        return $this->morphOne(Kota::class,'kotaable');
+        return $this->hasOne(Kota::class,'id');
     }
 
     public function komoditas()
     {
-        return $this->morphOne(Komoditas::class,'komoditasable');
+        return $this->hasOne(Komoditas::class,'kode_komoditas');
     }
 }

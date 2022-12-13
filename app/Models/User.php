@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function petani()
     {
-        return $this->hasOne(Petani::class, 'id');
+        return $this->hasOne(Petani::class, 'user_id');
     }
 
     public function project()
