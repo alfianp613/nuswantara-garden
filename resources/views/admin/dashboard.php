@@ -1,7 +1,1 @@
-<html>
-
-<body>
-    <h1>Ini Dashboard</h1>
-</body>
-
-</html>
+@extends('layouts/admin-dash-layout')
