@@ -79,5 +79,5 @@ Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentCo
 
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
+    return view('admin.index');
 });
