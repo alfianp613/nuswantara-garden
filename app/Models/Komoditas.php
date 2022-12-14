@@ -11,7 +11,7 @@ class Komoditas extends Model
 
     public function petani()
     {
-        return $this->belongsTo(Petani::class,'kode_komoditas');
+        return $this->belongsTo(Petani::class);
     }
 
     protected $fillable = [

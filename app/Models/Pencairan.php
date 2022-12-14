@@ -12,11 +12,11 @@ class Pencairan extends Model
 
     public function petani()
     {
-        return $this->belongsTo(Petani::class,'petaniid');
+        return $this->belongsTo(Petani::class);
     } 
 
     public function project()
     {
-        return $this->belongsTo(Project::class,'projectid');
+        return $this->belongsTo(Project::class);
     } 
 }

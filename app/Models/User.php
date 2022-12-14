@@ -42,16 +42,11 @@ class User extends Authenticatable
 
     public function petani()
     {
-        return $this->hasOne(Petani::class, 'user_id');
-    }
-
-    public function project()
-    {
-        return $this->hasMany(Project::class,'petaniid');
+        return $this->hasOne(Petani::class);
     }
 
     public function payment()
     {
-        return $this->hasMany(Payment::class,'userid');
+        return $this->hasMany(Payment::class);
     }
 }

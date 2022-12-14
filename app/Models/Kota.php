@@ -15,11 +15,11 @@ class Kota extends Model
 
     public function kota()
     {
-        return $this->belongsTo(Propinsi::class,'id');
+        return $this->belongsTo(Propinsi::class);
     }
 
     public function petani()
     {
-        return $this->belongsTo(Petani::class,'kode_kota');
+        return $this->belongsTo(Petani::class,'id');
     }
 }

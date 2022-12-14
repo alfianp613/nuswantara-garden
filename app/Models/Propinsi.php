@@ -15,11 +15,11 @@ class Propinsi extends Model
 
     public function kota()
     {
-        return $this->hasMany(Kota::class,'kode_propinsi');
+        return $this->hasMany(Kota::class);
     }
 
     public function petani()
     {
-        return $this->belongsTo(Petani::class,'kode_propinsi');
+        return $this->belongsTo(Petani::class);
     }
 }

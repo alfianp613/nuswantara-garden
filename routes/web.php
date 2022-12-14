@@ -8,6 +8,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\DashboardProjectController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\QueryDashboard;
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Support\Facades\Route;
 
 
@@ -83,3 +85,5 @@ Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentCo
 Route::get('/admin/dashboard', function () {
     return view('admin.index');
 });
+
+Route::get('/test', [QueryDashboard::class,'test']);

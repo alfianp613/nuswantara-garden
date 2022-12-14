@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fact_Penjualan extends Model
+class DimPetani extends Model
 {
     /**
      * The table associated with the model.
@@ -12,5 +13,6 @@ class Fact_Penjualan extends Model
      * @var string
      */
     protected $connection = 'mysql2';
-    protected $table = 'fact_donasi';
+    protected $table = 'dim_petani';
+
 }

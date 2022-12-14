@@ -13,17 +13,22 @@ class Petani extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class);
+    }
+
+    public function project()
+    {
+        return $this->hasMany(Project::class);
     }
 
     public function pencairan()
     {
-        return $this->hasMany(Pencairan::class,'petaniid');
+        return $this->hasMany(Pencairan::class);
     }
 
     public function propinsi()
     {
-        return $this->hasOne(Propinsi::class,'id');
+        return $this->hasOne(Propinsi::class,'kode_propinsi');
     }
 
     public function kota()
@@ -33,6 +38,6 @@ class Petani extends Model
 
     public function komoditas()
     {
-        return $this->hasOne(Komoditas::class,'kode_komoditas');
+        return $this->hasOne(Komoditas::class,"kode_komoditas");
     }
 }

@@ -14,17 +14,17 @@ class Project extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'petaniid');
+        return $this->belongsTo(Petani::class);
     } 
 
     public function payment()
     {
-        return $this->hasMany(Payment::class,'projectid');
+        return $this->hasMany(Payment::class);
     }
 
     public function pencairan()
     {
-        return $this->hasMany(Pencairan::class,'projectid');
+        return $this->hasMany(Pencairan::class);
     }
 
     /**

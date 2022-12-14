@@ -40,7 +40,6 @@ class DatabaseSeeder extends Seeder
         //     ]);
         // }
 
-        // \App\Models\User::factory(100)->create();
 
         // $petani_id = DB::table('petanis')->pluck('id');
         // $status = ["Perencanaan","Berjalan","Selesai"];
@@ -62,30 +61,36 @@ class DatabaseSeeder extends Seeder
         // }
 
         // $projects_id = DB::table('projects')->pluck('id');
-
+        // $nom = [10000,50000,100000,150000,200000,250000,300000,350000,400000,450000,500000,550000,600000,650000,
+        // 700000,750000,800000,850000,900000,950000,1000000,1050000,1100000,1150000,1200000,1250000,1300000,1350000,
+        // 1400000,1450000,1500000,1550000,1600000,1650000,1700000,1750000,1800000,1850000,1900000,1950000,2000000];
+        
         // foreach (range(1,3000) as $index) {
         //     $project_id = $faker->randomElement($projects_id);
         //     $project = DB::table('projects')->where('id',"=" ,$project_id)->get();
         //     DB::table('payments')->insert([
         //         "userid" => $faker->numberBetween(201, 400),
         //         "projectid" => $project_id, 
-        //         "nominal" => $faker->numberBetween(10000, $project[0]->target_pendanaan -  $project[0]->dana_terkumpul-1500000),
+        //         "nominal" => $faker->randomElement($nom),
         //         "created_at" => $faker->dateTimeBetween($project[0]->created_at, '-1 week')
         //     ]);
         // }
         
 
-        $projects_id = DB::table('projects')->pluck('id');
-        foreach (range(1,2000) as $index) {
-            $project_id = $faker->randomElement($projects_id);
-            $project = DB::table('projects')->where('id',"=" ,$project_id)->get();
-            DB::table('pencairans')->insert([
-                "petaniid" => $project[0]->petaniid,
-                "projectid" => $project_id, 
-                "nominal" => $faker->numberBetween(10000, $project[0]->dana_terkumpul -  $project[0]->dana_terambil - 1500000),
-                "created_at" => $faker->dateTimeBetween($project[0]->created_at, '-1 week')
-            ]);
-        }
+        // $projects_id = DB::table('projects')->pluck('id');
+        // foreach (range(1,500) as $index) {
+        //     $project_id = $faker->randomElement($projects_id);
+        //     $project = DB::table('projects')->where('id',"=" ,$project_id)->get();
+        //     if(($project[0]->dana_terkumpul -  $project[0]->dana_terambil) < 10000){
+        //         continue;
+        //     };
+        //     DB::table('pencairans')->insert([
+        //         "petaniid" => $project[0]->petaniid,
+        //         "projectid" => $project_id, 
+        //         "nominal" => $faker->numberBetween(10000, $project[0]->dana_terkumpul -  $project[0]->dana_terambil),
+        //         "created_at" => $faker->dateTimeBetween($project[0]->created_at, '-1 week')
+        //     ]);
+        // }
         
         
        
