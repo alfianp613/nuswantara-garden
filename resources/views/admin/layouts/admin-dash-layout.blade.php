@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/public/img/logohead.png" />
-        <title>Nuswantara</title>
+        <link rel="icon" href="/img/logohead.png">
+        <title>Nuswantara | Admin</title>
         <!-- <title>AdminLTE 3 | Starter</title> -->
 
         <!-- Google Font: Source Sans Pro -->
@@ -24,15 +24,17 @@
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             @include("admin.layouts.admin-navbar")
+            {{-- @include('partials.navbar') --}}
             @include("admin.layouts.admin-sidebar")
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 @yield('container')
             </div>
+            @include("partials/footer")
             <!-- /.content-wrapper -->
 
-            <!-- Main Footer -->
+            {{-- <!-- Main Footer -->
             <footer class="main-footer">
                 <!-- To the right -->
                 <div class="float-right d-none d-sm-inline">
@@ -44,7 +46,7 @@
                     <a href="https://adminlte.io">AdminLTE.io</a>.</strong
                 >
                 All rights reserved.
-            </footer>
+            </footer> --}}
         </div>
         <!-- ./wrapper -->
 
