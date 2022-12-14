@@ -81,6 +81,111 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="/img/logohead.png" alt="">
+                        <h5>chart full size</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="/img/logohead.png" alt="">
+                        <h5>chart 1/2</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="/img/logohead.png" alt="">
+                        <h5>chart 2/2</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="filter">
+                            <button class="btn btn-secondary">Top 5 Donatur</button>
+                            <button class="btn btn-secondary">Top 5 Active Donatur</button>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Total Amount</th>
+                                <th scope="col">Frequence</th>
+                            </thead>
+                            <tbody>
+                                {{-- <tr>
+                                    <th scope="row">1</th>
+                                </tr> --}}
+                                <tr>
+                                    <td>1</td>
+                                    <td>random</td>
+                                    <td>10000</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>random</td>
+                                    <td>14000</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="filter">
+                            <button class="btn btn-secondary">5 Recent Completed Project</button>
+                            <button class="btn btn-secondary">Bottom 5 Project</button>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Total Amount</th>
+                                <th scope="col">Percent Amount</th>
+                                <th scope="col">Status</th>
+                            </thead>
+                            <tbody>
+                                {{-- <tr>
+                                    <th scope="row">1</th>
+                                </tr> --}}
+                                <tr>
+                                    <td>1</td>
+                                    <td>random</td>
+                                    <td>10000</td>
+                                    <td>100</td>
+                                    <td>done</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>random</td>
+                                    <td>14000</td>
+                                    <td>100</td>
+                                    <td>done</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="card">
