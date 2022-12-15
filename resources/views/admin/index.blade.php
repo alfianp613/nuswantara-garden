@@ -110,7 +110,6 @@
                             var data = [trace1,trace2,trace3];
 
                             var layout = {
-                                
                             title: 'Trend Transaksi',
                             xaxis: {
                                 rangeselector: selectorOptions,
@@ -147,10 +146,10 @@
                             x: {{ Js::from($prov) }},
                             y: {{ Js::from($total) }},
                             marker: {
-                                color: 'rgb(158,202,225)',
+                                color: '#bcff6a',
                                 opacity: 0.6,
                                 line: {
-                                color: 'rgb(8,48,107)',
+                                color: '#00acba',
                                 width: 1.5
                                 }
                             },
@@ -171,10 +170,10 @@
                             x: {{ Js::from($prov2) }},
                             y: {{ Js::from($total2) }},
                             marker: {
-                                color: 'rgb(158,202,225)',
+                                color: '#bcff6a',
                                 opacity: 0.6,
                                 line: {
-                                color: 'rgb(8,48,107)',
+                                color: '#00acba',
                                 width: 1.5
                                 }
                             },
@@ -211,10 +210,10 @@
                             x: {{ Js::from($kom2) }},
                             y: {{ Js::from($komt2) }},
                             marker: {
-                                color: 'rgb(158,202,225)',
+                                color: '#4c4d5c',
                                 opacity: 0.6,
                                 line: {
-                                color: 'rgb(8,48,107)',
+                                color: '#00acba',
                                 width: 1.5
                                 }
                             },
@@ -235,10 +234,10 @@
                             x: {{ Js::from($kom) }},
                             y: {{ Js::from($komt) }},
                             marker: {
-                                color: 'rgb(158,202,225)',
+                                color: '#4c4d5c',
                                 opacity: 0.6,
                                 line: {
-                                color: 'rgb(8,48,107)',
+                                color: '#00acba',
                                 width: 1.5
                                 }
                             },
@@ -261,10 +260,10 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h5 class="m-0">Tabel Donatur</h5>
+                    </div>
                     <div class="card-body">
-                        <div class="card-header">
-                            <h5 class="m-0">Tabel Donatur</h5>
-                        </div>
                         <div class="filter">
                             <button class="btn btn-primary" onclick="amount()">Top 5 Donatur</button>
                             <button class="btn btn-primary" onclick="aktif() ">Top 5 Active Donatur</button>
