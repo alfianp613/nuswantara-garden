@@ -1,3 +1,4 @@
+
 @extends('admin.layouts.admin-dash-layout')
 
 @section('container')
@@ -9,18 +10,6 @@
             <div class="col-sm-6">
                 <h1 class="m-0">Dashboard</h1>
             </div>
-            <!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Dashboard 
-                    </li>
-                </ol>
-            </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
     </div>
@@ -121,7 +110,8 @@
                             var data = [trace1,trace2,trace3];
 
                             var layout = {
-                            title: 'Line Chart',
+                                
+                            title: 'Trend Transaksi',
                             xaxis: {
                                 rangeselector: selectorOptions,
                                 rangeslider: {}
@@ -140,26 +130,141 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <div class="card text-center">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h5 class="m-0">Bar Chart Propinsi</h5>
+                    </div>
                     <div class="card-body">
-                        <img src="/img/logohead.png" alt="">
-                        <h5>chart 1/2</h5>
+                        <div class="filter">
+                            <button class="btn btn-primary" onclick="provdonasi()">Total Donasi</button>
+                            <button class="btn btn-primary" onclick="provtrans() ">Total Transaksi</button>
+                        </div>
+                        <div id="barchartprov" style="display: flex;"></div>
+                        <div id="barchartprov2" style="display: none;"></div>
+                        <script>
+                            var data3 = [{
+                            type: 'bar',
+                            x: {{ Js::from($prov) }},
+                            y: {{ Js::from($total) }},
+                            marker: {
+                                color: 'rgb(158,202,225)',
+                                opacity: 0.6,
+                                line: {
+                                color: 'rgb(8,48,107)',
+                                width: 1.5
+                                }
+                            },
+                            hovertemplate:  'Nominal: Rp %{y:.2f}'
+                            }];
+                            var layout2 = {
+                            autosize: false,
+                            width: 575,
+                            height: 500,
+                            title: '5 Propinsi dengan Total Donasi Terbanyak',
+                            hovermode: "closest",
+                            legend:false
+                            };
+                            Plotly.newPlot('barchartprov', data3, layout2);
+
+                            var data4 = [{
+                            type: 'bar',
+                            x: {{ Js::from($prov2) }},
+                            y: {{ Js::from($total2) }},
+                            marker: {
+                                color: 'rgb(158,202,225)',
+                                opacity: 0.6,
+                                line: {
+                                color: 'rgb(8,48,107)',
+                                width: 1.5
+                                }
+                            },
+                            hovertemplate:  'Transaksi: %{y}'
+                            }];
+                            var layout4 = {
+                            autosize: false,
+                            width: 575,
+                            height: 500,
+                            title: '5 Propinsi dengan Total Transaksi Terbanyak',
+                            hovermode: "closest",
+                            legend:false
+                            };
+                            Plotly.newPlot('barchartprov2', data4, layout4);
+                        </script>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="card text-center">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h5 class="m-0">Bar Chart Komoditas</h5>
+                    </div>
                     <div class="card-body">
-                        <img src="/img/logohead.png" alt="">
-                        <h5>chart 2/2</h5>
+                        <div class="filter">
+                            <button class="btn btn-primary" onclick="komdonasi()">Total Donasi</button>
+                            <button class="btn btn-primary" onclick="komtrans() ">Total Transaksi</button>
+                        </div>
+                        <div id="barchartkom" style="display: flex;"></div>
+                        <div id="barchartkom2" style="display: none;"></div>
+                        <script>
+                            var data3 = [{
+                            type: 'bar',
+                            x: {{ Js::from($kom2) }},
+                            y: {{ Js::from($komt2) }},
+                            marker: {
+                                color: 'rgb(158,202,225)',
+                                opacity: 0.6,
+                                line: {
+                                color: 'rgb(8,48,107)',
+                                width: 1.5
+                                }
+                            },
+                            hovertemplate:  'Nominal: Rp %{y:.2f}'
+                            }];
+                            var layout2 = {
+                            autosize: false,
+                            width: 575,
+                            height: 500,
+                            title: 'Komoditas dengan Total Donasi Terbanyak',
+                            hovermode: "closest",
+                            legend:false
+                            };
+                            Plotly.newPlot('barchartkom', data3, layout2);
+
+                            var data4 = [{
+                            type: 'bar',
+                            x: {{ Js::from($kom) }},
+                            y: {{ Js::from($komt) }},
+                            marker: {
+                                color: 'rgb(158,202,225)',
+                                opacity: 0.6,
+                                line: {
+                                color: 'rgb(8,48,107)',
+                                width: 1.5
+                                }
+                            },
+                            hovertemplate:  'Transaksi: %{y}'
+                            }];
+                            var layout4 = {
+                            autosize: false,
+                            width: 575,
+                            height: 500,
+                            title: 'Komoditas dengan Total Transaksi Terbanyak',
+                            hovermode: "closest",
+                            legend:false
+                            };
+                            Plotly.newPlot('barchartkom2', data4, layout4);
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="card">
+                <div class="card card-primary card-outline">
                     <div class="card-body">
+                        <div class="card-header">
+                            <h5 class="m-0">Tabel Donatur</h5>
+                        </div>
                         <div class="filter">
                             <button class="btn btn-primary" onclick="amount()">Top 5 Donatur</button>
                             <button class="btn btn-primary" onclick="aktif() ">Top 5 Active Donatur</button>
@@ -214,11 +319,14 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="card">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h5 class="m-0">Tabel Project</h5>
+                    </div>
                     <div class="card-body">
                         <div class="filter">
-                            <button class="btn btn-secondary" onclick="projecttop()">5 Recent Completed Project</button>
-                            <button class="btn btn-secondary" onclick="projectbot()">Bottom 5 Project</button>
+                            <button class="btn btn-primary" onclick="projecttop()">5 Recent Completed Project</button>
+                            <button class="btn btn-primary" onclick="projectbot()">Bottom 5 Project</button>
                         </div>
                         <table class="table table-striped" id="topproject" style="display: block;">
                             <thead>
@@ -264,54 +372,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                        <p class="card-text">
-                            Some quick example text to build on
-                            the card title and make up the bulk
-                            of the card's content.
-                        </p>
-
-                        <a href="#" class="card-link"
-                            >Card link</a
-                        >
-                        <a href="#" class="card-link"
-                            >Another link</a
-                        >
-                    </div>
-                </div>
-
-                <!-- /.card -->
-            </div>
-            <!-- /.col-sm-6 -->
-            <div class="col-lg-6">
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <h5 class="m-0">Featured</h5>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-title">
-                            Special title treatment
-                        </h6>
-
-                        <p class="card-text">
-                            With supporting text below as a
-                            natural lead-in to additional
-                            content.
-                        </p>
-                        <a href="#" class="btn btn-primary"
-                            >Go somewhere</a
-                        >
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-sm-6 -->
-        </div>
-        <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
 </div>
@@ -354,6 +414,46 @@
         var y = document.getElementById("bottomproject");
         if (y.style.display === "none") {
             y.style.display = "block";
+    }}
+
+    function provdonasi() {
+        var x = document.getElementById("barchartprov");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        }
+        var y = document.getElementById("barchartprov2");
+        if (y.style.display === "flex") {
+            y.style.display = "none";
+    }}
+
+    function provtrans() {
+        var x = document.getElementById("barchartprov");
+        if (x.style.display === "flex") {
+            x.style.display = "none";
+        }
+        var y = document.getElementById("barchartprov2");
+        if (y.style.display === "none") {
+            y.style.display = "flex";
+    }}
+
+    function komdonasi() {
+        var x = document.getElementById("barchartkom");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        }
+        var y = document.getElementById("barchartkom2");
+        if (y.style.display === "flex") {
+            y.style.display = "none";
+    }}
+
+    function komtrans() {
+        var x = document.getElementById("barchartkom");
+        if (x.style.display === "flex") {
+            x.style.display = "none";
+        }
+        var y = document.getElementById("barchartkom2");
+        if (y.style.display === "none") {
+            y.style.display = "flex";
     }}
 </script>
 

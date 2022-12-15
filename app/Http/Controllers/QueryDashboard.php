@@ -76,6 +76,66 @@ class QueryDashboard extends Controller
             FROM dim_project
             ORDER BY persentase
             LIMIT 5;'));
+        $bar1 = DB::connection('mysql2')->select(DB::raw('SELECT nama_propinsi, sum(nominal) as total_donasi
+        FROM fact_payment
+        INNER JOIN dim_petani
+        ON fact_payment.sk_petani = dim_petani.sk_petani
+        GROUP BY nama_propinsi
+        ORDER BY total_donasi DESC
+        LIMIT 5;'));
+        $prov = array();
+        foreach($bar1 as $data){
+        array_push($prov,$data->nama_propinsi);
+        }
+        $total = array();
+        foreach($bar1 as $data){
+        array_push($total,$data->total_donasi);
+        }
+        $bar2 = DB::connection('mysql2')->select(DB::raw('SELECT nama_propinsi, COUNT(nominal) as total_transaksi
+        FROM fact_payment
+        INNER JOIN dim_petani
+        ON fact_payment.sk_petani = dim_petani.sk_petani
+        GROUP BY nama_propinsi
+        ORDER BY total_transaksi DESC
+        LIMIT 5;'));
+        $prov2 = array();
+        foreach($bar2 as $data){
+        array_push($prov2,$data->nama_propinsi);
+        }
+        $total2 = array();
+        foreach($bar2 as $data){
+        array_push($total2,$data->total_transaksi);
+        }
+        $bar3 = DB::connection('mysql2')->select(DB::raw('SELECT nama_komoditas, COUNT(nominal) as total_transaksi
+        FROM fact_payment
+        INNER JOIN dim_petani
+        ON fact_payment.sk_petani = dim_petani.sk_petani
+        GROUP BY nama_komoditas
+        ORDER BY total_transaksi DESC
+        LIMIT 5;'));
+        $kom = array();
+        foreach($bar3 as $data){
+        array_push($kom,$data->nama_komoditas);
+        }
+        $komt = array();
+        foreach($bar3 as $data){
+        array_push($komt,$data->total_transaksi);
+        }
+        $bar4 = DB::connection('mysql2')->select(DB::raw('SELECT nama_komoditas, sum(nominal) as total_donasi
+        FROM fact_payment
+        INNER JOIN dim_petani
+        ON fact_payment.sk_petani = dim_petani.sk_petani
+        GROUP BY nama_komoditas
+        ORDER BY total_donasi DESC
+        LIMIT 5;'));
+        $kom2 = array();
+        foreach($bar4 as $data){
+        array_push($kom2,$data->nama_komoditas);
+        }
+        $komt2 = array();
+        foreach($bar4 as $data){
+        array_push($komt2,$data->total_donasi);
+        }
         return view('admin.index',[
             'user'=>$u[0],
             'petani'=>$p[0],
@@ -91,7 +151,15 @@ class QueryDashboard extends Controller
             'top5user'=>$top5user,
             'top5active'=>$top5active,
             'doneproject'=>$doneproject,
-            'projectbottom'=>$projectbottom
+            'projectbottom'=>$projectbottom,
+            'prov'=>$prov,
+            'total'=>$total,
+            'prov2'=>$prov2,
+            'total2'=>$total2,
+            'kom'=>$kom,
+            'komt'=>$komt,
+            'kom2'=>$kom2,
+            'komt2'=>$komt2
         ]);
     }
 }
