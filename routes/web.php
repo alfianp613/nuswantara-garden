@@ -82,8 +82,6 @@ Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentCo
 Route::post('/dashboard/project/{project:slug}/{petani:nik}/payment', [PaymentController::class,'pencairan'])->middleware('auth:petani');
 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.index');
-});
+Route::get('/admin/dashboard', [QueryDashboard::class,'dashboard'])->middleware('auth:admin');
 
-Route::get('/test', [QueryDashboard::class,'test']);
+Route::get('/test', [QueryDashboard::class,'dashboard']);

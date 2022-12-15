@@ -20,6 +20,8 @@
         />
         <!-- Theme style -->
         <link rel="stylesheet" href="/dist/css/adminlte.min.css" />
+        <!-- Load plotly.js into the DOM -->
+        <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
