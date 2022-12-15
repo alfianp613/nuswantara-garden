@@ -23,6 +23,15 @@
         <!-- Load plotly.js into the DOM -->
         <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
     </head>
+
+    {{-- STYLE --}}
+    <style>
+        .content-wrapper,body{
+            background-color: #e9e9e9
+        }
+    </style>
+    {{-- ENDSTYLE --}}
+
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             @include("admin.layouts.admin-navbar")

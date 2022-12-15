@@ -159,6 +159,9 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="card">
+                    <div class="card-title text-center">
+                        <h3>Donatur</h3>
+                    </div>
                     <div class="card-body">
                         <div class="filter">
                             <button class="btn btn-primary" onclick="amount()">Top 5 Donatur</button>
@@ -215,6 +218,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="card">
+                    <div class="card-title text-center">
+                        <h3>Project</h3>
+                    </div>
                     <div class="card-body">
                         <div class="filter">
                             <button class="btn btn-secondary" onclick="projecttop()">5 Recent Completed Project</button>
