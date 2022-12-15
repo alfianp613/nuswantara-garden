@@ -21,7 +21,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="card">
                     <div class="card-body">
                         <h2>
@@ -33,14 +33,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="card">
                     <div class="card-body">
                         <h2>
-                            {{$user->jumlah_user}}
+                            {{$petani->jumlah_petani}}
                         </h2>
                         <h5>
                             Total Petani
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>
+                            {{$project->jumlah_project}}
+                        </h2>
+                        <h5>
+                            Total Project
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>
+                            Rp {{$transaksi->total_nominal}}
+                        </h2>
+                        <h5>
+                            Total Donasi
                         </h5>
                     </div>
                 </div>
